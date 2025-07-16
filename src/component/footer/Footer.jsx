@@ -8,6 +8,9 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+  const hoverLink =
+    "relative inline-block after:absolute after:left-0 after:-bottom-1 after:w-0 hover:after:w-full after:h-[2px] after:bg-purple-400 after:transition-all after:duration-300 after:ease-in-out";
+
   return (
     <>
       <footer className="bg-gray-900 text-white pt-12 pb-6 relative">
@@ -34,7 +37,7 @@ export default function Footer() {
               </p>
               <a
                 href="/about"
-                className="text-purple-400 text-sm underline mt-2 inline-block"
+                className={`${hoverLink} text-purple-400 text-sm mt-2 inline-block`}
               >
                 Read More
               </a>
@@ -43,6 +46,7 @@ export default function Footer() {
                   href="https://www.facebook.com/profile?id=61560396193559"
                   target="_blank"
                   rel="noreferrer"
+                  className={hoverLink}
                 >
                   <FaFacebookF />
                 </a>
@@ -50,6 +54,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/amit-sharma-175232a4/"
                   target="_blank"
                   rel="noreferrer"
+                  className={hoverLink}
                 >
                   <FaLinkedinIn />
                 </a>
@@ -57,6 +62,7 @@ export default function Footer() {
                   href="https://www.instagram.com/amit9851?utm_source=qr&igsh=dG5tZXlxdXJoendk"
                   target="_blank"
                   rel="noreferrer"
+                  className={hoverLink}
                 >
                   <FaInstagram />
                 </a>
@@ -69,22 +75,34 @@ export default function Footer() {
               </h4>
               <ul className="text-sm text-gray-300 space-y-2">
                 <li>
-                  <a href="/about">About Us</a>
+                  <a href="/about" className={hoverLink}>
+                    About Us
+                  </a>
                 </li>
                 <li>
-                  <a href="/blog">Blogs</a>
+                  <a href="/blog" className={hoverLink}>
+                    Blogs
+                  </a>
                 </li>
                 <li>
-                  <a href="/contact">Contact Us</a>
+                  <a href="/contact" className={hoverLink}>
+                    Contact Us
+                  </a>
                 </li>
                 <li>
-                  <a href="/service">Our Expertise</a>
+                  <a href="/service" className={hoverLink}>
+                    Our Expertise
+                  </a>
                 </li>
                 <li>
-                  <a href="/testimonial">Patient Testimonial</a>
+                  <a href="/testimonial" className={hoverLink}>
+                    Patient Testimonial
+                  </a>
                 </li>
                 <li>
-                  <a href="/patientinfo">Patient Information</a>
+                  <a href="/patientinfo" className={hoverLink}>
+                    Patient Information
+                  </a>
                 </li>
               </ul>
             </div>
@@ -95,32 +113,54 @@ export default function Footer() {
               </h4>
               <ul className="text-sm text-gray-300 space-y-2">
                 <li>
-                  <a href="/service-detail/knee-replacement">
+                  <a
+                    href="/service-detail/knee-replacement"
+                    className={hoverLink}
+                  >
                     Knee Replacement
                   </a>
                 </li>
                 <li>
-                  <a href="/service-detail/hip-replacement">Hip Replacement</a>
+                  <a
+                    href="/service-detail/hip-replacement"
+                    className={hoverLink}
+                  >
+                    Hip Replacement
+                  </a>
                 </li>
                 <li>
-                  <a href="/service-detail/arthroscopy">Arthroscopy</a>
+                  <a href="/service-detail/arthroscopy" className={hoverLink}>
+                    Arthroscopy
+                  </a>
                 </li>
                 <li>
-                  <a href="/service-detail/acl-and-pcl-reconstruction">
+                  <a
+                    href="/service-detail/acl-and-pcl-reconstruction"
+                    className={hoverLink}
+                  >
                     ACL & PCL Reconstruction
                   </a>
                 </li>
                 <li>
-                  <a href="/service-detail/sports-injury">Sports Injury</a>
+                  <a href="/service-detail/sports-injury" className={hoverLink}>
+                    Sports Injury
+                  </a>
                 </li>
                 <li>
-                  <a href="/service-detail/arthritis">Arthritis</a>
+                  <a href="/service-detail/arthritis" className={hoverLink}>
+                    Arthritis
+                  </a>
                 </li>
                 <li>
-                  <a href="/service-detail/osteoporosis">Osteoporosis</a>
+                  <a href="/service-detail/osteoporosis" className={hoverLink}>
+                    Osteoporosis
+                  </a>
                 </li>
                 <li>
-                  <a href="/service-detail/minimal-invasive-complex-trauma-surgery">
+                  <a
+                    href="/service-detail/minimal-invasive-complex-trauma-surgery"
+                    className={hoverLink}
+                  >
                     Minimally Invasive Trauma Surgery
                   </a>
                 </li>
@@ -165,7 +205,7 @@ export default function Footer() {
               href="https://medipage.in"
               target="_blank"
               rel="noreferrer"
-              className="text-purple-300 hover:underline"
+              className={`${hoverLink} text-purple-300`}
             >
               Developed by: Medipage Communications
             </a>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-fade";
 
@@ -33,13 +34,12 @@ function Home() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            {/* LG+ View: Full image + content overlayed from right */}
+            {/* Desktop View */}
             <div
               className="hidden lg:block relative w-full h-[90vh] bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
-              {/* Overlay Content */}
-              <div className="absolute right-0 top-0 bottom-0 w-full  lg:w-1/2 flex items-center justify-end p-6 xl:p-12 bg-gradient-to-l from-white/80 to-white/0">
+              <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 flex items-center justify-end p-6 xl:p-12 bg-gradient-to-l from-white/80 to-white/0">
                 <div className="max-w-xl bg-white/90 p-6 rounded-lg shadow-lg">
                   <h1 className="text-3xl xl:text-4xl font-bold text-purple-900 mb-4">
                     {slide.title}
@@ -51,18 +51,18 @@ function Home() {
                     Book an Appointment
                   </h3>
                   <div className="flex flex-col xl:flex-row gap-4 mb-6">
-                    <a
-                      href="https://www.dramitsharma.info/contact"
+                    <Link
+                      to="/contact"
                       className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition text-sm text-center"
                     >
                       Yashoda Super Speciality Hospital, Kaushambi
-                    </a>
-                    <a
-                      href="https://www.dramitsharma.info/contact"
+                    </Link>
+                    <Link
+                      to="/contact"
                       className="bg-white border border-purple-700 text-purple-700 px-4 py-2 rounded-md hover:bg-purple-100 transition text-sm text-center"
                     >
                       City Clinic, Krishna Nagar
-                    </a>
+                    </Link>
                   </div>
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
@@ -92,15 +92,13 @@ function Home() {
               </div>
             </div>
 
-            {/* Mobile + Tablet View */}
+            {/* Mobile View */}
             <div className="block lg:hidden bg-white min-h-screen">
-              {/* Mobile Image Section */}
               <div
                 className="w-full h-[250px] sm:h-[300px] bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.image})` }}
               ></div>
 
-              {/* Content Section */}
               <div className="p-4 space-y-4 pb-16">
                 <h1 className="text-xl font-bold text-purple-900">
                   {slide.title}
@@ -112,18 +110,18 @@ function Home() {
                 </h3>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                  <a
-                    href="https://www.dramitsharma.info/contact"
+                  <Link
+                    to="/contact"
                     className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition text-sm text-center"
                   >
                     Yashoda Super Speciality Hospital, Kaushambi
-                  </a>
-                  <a
-                    href="https://www.dramitsharma.info/contact"
+                  </Link>
+                  <Link
+                    to="/contact"
                     className="bg-white border border-purple-700 text-purple-700 px-4 py-2  rounded-md hover:bg-purple-100 transition text-sm text-center"
                   >
                     City Clinic, Krishna Nagar
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-3 gap-4 text-center pt-2">

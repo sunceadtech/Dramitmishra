@@ -34,7 +34,7 @@ function HomeMeet() {
           </p>
 
           <a
-            href="https://www.dramitsharma.info/about"
+            href="/about"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded transition duration-300"

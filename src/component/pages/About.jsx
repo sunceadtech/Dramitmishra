@@ -15,7 +15,7 @@ function About() {
         />
 
         {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
+       <div className="absolute inset-0 bg-black/30"></div>
 
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-start">
@@ -172,7 +172,7 @@ function About() {
           {/* View Services Button */}
           <div className="text-center pt-2">
             <Link
-              to="/service"
+              to="/blog"
               className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition"
             >
               View All Services
