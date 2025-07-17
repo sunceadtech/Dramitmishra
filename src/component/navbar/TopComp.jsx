@@ -21,10 +21,31 @@ function TopComp() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-4 mt-2 md:mt-0">
-            <FaFacebookF className="hover:text-blue-500 cursor-pointer" />
-            <FaLinkedinIn className="hover:text-blue-400 cursor-pointer" />
-            <FaInstagram className="hover:text-pink-500 cursor-pointer" />
+          <div className="flex items-center gap-5 mt-2 md:mt-0">
+            <a
+              href="https://www.facebook.com/profile?id=61560396193559"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-blue-500 cursor-pointer transition"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/amit-sharma-175232a4/"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-blue-400 cursor-pointer transition"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a
+              href="https://www.instagram.com/amit9851?utm_source=qr&igsh=dG5tZXlxdXJoendk"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-pink-500 cursor-pointer transition"
+            >
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>

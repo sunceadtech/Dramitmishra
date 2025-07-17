@@ -47,8 +47,8 @@ function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center h-full">
             <img
-              src="./images/logo.png"
-              alt="logo"
+              src="/images/logo.png"
+              alt="Dr. Amit Sharma Logo"
               className="h-10 w-auto object-contain"
             />
           </Link>

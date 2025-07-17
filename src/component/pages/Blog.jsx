@@ -10,7 +10,7 @@ function Blog() {
       image: "https://www.dramitsharma.info/public/uploads/news-17.png",
       excerpt:
         "Knee pain shouldn't be ignored. Learn about common causes, early symptoms, and when it’s time to see an orthopedic specialist.",
-      link: "https://www.dramitsharma.info/news/view/joint-ventures-how-to-keep-your-bones-strong-and-flexible",
+      link: "/service-detail/knee-replacement", // 🦵
     },
     {
       title: "Top 5 Recovery Tips After Orthopedic Surgery",
@@ -18,7 +18,7 @@ function Blog() {
       image: "https://www.dramitsharma.info/public/uploads/news-16.jpg",
       excerpt:
         "Recover faster and safer with these expert tips—covering physiotherapy, nutrition, rest, and follow-up care after joint surgery.",
-      link: "https://www.dramitsharma.info/news/view/what-to-do-and-what-not-to-do-after-you-sprain-your-ankle",
+      link: "/service-detail/minimal-invasive-complex-trauma-surgery", // 🛠
     },
     {
       title: "Preventing Sports Injuries: A Guide for Active Adults",
@@ -26,7 +26,7 @@ function Blog() {
       image: "https://www.dramitsharma.info/public/uploads/news-15.jpg",
       excerpt:
         "Stay in the game longer! Discover how to protect your joints, strengthen muscles, and avoid common sports injuries at any age.",
-      link: "https://www.dramitsharma.info/news/view/osteoporosis-in-men-a-neglected-underreported-problem",
+      link: "/service-detail/sports-injury", // 🏃
     },
     {
       title: "Are Health Screenings Really That Important?",
@@ -35,7 +35,7 @@ function Blog() {
         "https://www.adventhealth.com/sites/default/files/styles/fc_4x3_sm/public/media/24-phd-08288-primary_care-september_blogs-why_are_health_screenings_important-2000_x_1333_b.jpg.webp?h=e8305a61&itok=r9dk7RVE",
       excerpt:
         "Regular health screenings can detect issues early and save lives. Learn which ones matter most for your age and health goals.",
-      link: "#",
+      link: "/about", // 👨‍⚕️ No direct service, fallback to About
     },
     {
       title: "How Part-Time Physicians Are Changing Healthcare",
@@ -44,7 +44,7 @@ function Blog() {
         "https://www.sermo.com/wp-content/uploads/2023/08/part-time-physicians-blog-img.jpeg",
       excerpt:
         "The rise of part-time medical professionals is reshaping patient care, work-life balance, and accessibility in healthcare.",
-      link: "#",
+      link: "/about", // 👨‍⚕️ General info
     },
     {
       title: "Orthopedic Success Story: A Journey to Pain-Free Living",
@@ -53,7 +53,7 @@ function Blog() {
         "https://www.drbhupendra.com/wp-content/uploads/2023/09/IMG-20230905-WA0000-560x345.jpg",
       excerpt:
         "Follow the inspiring recovery of a patient who overcame chronic joint pain through expert orthopedic care and rehabilitation.",
-      link: "#",
+      link: "/service-detail/arthritis", // 🦴 likely arthritis-based pain
     },
   ];
 
@@ -160,7 +160,10 @@ function Blog() {
                       href={blog.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                    > {blog.title}</a>
+                    >
+                      {" "}
+                      {blog.title}
+                    </a>
                   </h5>
                   <p className="text-sm text-gray-600 mb-3">{blog.excerpt}</p>
                   <a

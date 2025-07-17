@@ -172,7 +172,7 @@ function About() {
           {/* View Services Button */}
           <div className="text-center pt-2">
             <Link
-              to="/blog"
+              to="/service"
               className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition"
             >
               View All Services

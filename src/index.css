@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Completely hide scrollbar for WebKit (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
+
+  /* Hide scrollbar for Firefox */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}

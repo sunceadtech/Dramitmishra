@@ -31,9 +31,9 @@ export default function Footer() {
                 className="mb-4 w-40"
               />
               <p className="text-sm text-gray-300">
-                Dr Amit Sharma is an Orthopedic surgeon with over 23 years of
-                experience, specializing in Joint replacements, Arthroscopy,
-                Trauma surgery, and Sports injuries.
+                Dr. Amit Sharma is a highly experienced Orthopedic Surgeon with
+                over 23 years of expertise, specializing in Joint Replacements,
+                Arthroscopy, Trauma Surgery, and Sports Injuries etc.
               </p>
               <a
                 href="/about"
@@ -207,7 +207,7 @@ export default function Footer() {
               rel="noreferrer"
               className={`${hoverLink} text-purple-300`}
             >
-              Developed by: Medipage Communications
+              Developed by: sunceadtech
             </a>
           </div>
         </div>

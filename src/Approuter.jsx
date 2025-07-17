@@ -9,6 +9,17 @@ import Contact from './component/pages/Contact';
 import ScrollTop from './component/pages/ScrollTop';
 import Testimonial from './component/services/Testimonial';
 import PaitentInfo from './component/services/PaitentInfo';
+import Knee from './component/services/Knee';
+import HipReplacement from './component/services/HipReplacement';
+import Arthroscopy from './component/services/Arthroscopy';
+import AclandPcl from './component/services/AclandPcl';
+import SportsInjury from './component/services/SportsInjury';
+import Arthritis from './component/services/Arthritis';
+import Osteoprosis from './component/services/Osteoprosis';
+import MinimalInvaise from './component/services/MinimalInvaise';
+import NotFound from './component/footer/NotFound';
+//import SurgeryCheck from './component/services/SurgeryCheck';
+import Services from './component/services/Services';
 const Approuter=()=>{
     return(
         <>
@@ -23,10 +34,21 @@ const Approuter=()=>{
         <Route path='/blog' element={<Blog/>}/>
          <Route path='/testimonial' element={<Testimonial/>}/>
         <Route path='/patientinfo' element={<PaitentInfo/>}/>
+        <Route path='/service-detail/knee-replacement' element={<Knee/>}/>
+        <Route path='/service-detail/hip-replacement' element={<HipReplacement/>}/>
+         <Route path='/service-detail/arthroscopy' element={<Arthroscopy/>}/>
+        <Route path='/service-detail/acl-and-pcl-reconstruction' element={<AclandPcl/>}/>
+        <Route path='/service-detail/sports-injury' element={<SportsInjury/>}/>
+        <Route path='/service-detail/arthritis' element={<Arthritis/>}/>
+        <Route path='/service-detail/osteoporosis' element={<Osteoprosis/>}/>
+        <Route path='/service-detail/minimal-invasive-complex-trauma-surgery' element={<MinimalInvaise/>}/>
+          <Route path="/service" element={<Services/>} />
+        {/*  <Route path="/surgery-check" element={<SurgeryCheck/>} />*/} 
+        <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer />
-      </Router>
-           </div>
+         <Footer />
+        </Router>
+        </div>
         </>
     )
 }

@@ -30,7 +30,7 @@ function KneeComp() {
               and see if surgery might be the right option.
             </p>
             <a
-              href="https://www.dramitsharma.info/surgerycheck"
+              href="/service-detail/knee-replacement"
               className="inline-block bg-yellow-400 text-black font-semibold px-6 py-3 rounded-md shadow hover:bg-yellow-300 transition"
             >
               Check Your Knee Health
