@@ -8,8 +8,8 @@ function AclandPcl() {
       {/* Banner Section */}
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-          src="https://www.dramitsharma.info/drassets/img/ourexpertdetailbanner.jpg"
-          alt="ACL and PCL Background"
+        src="/images/service.webp"
+          alt="ACL and PCL Reconstruction operation"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>

@@ -7,8 +7,8 @@ function Arthritis() {
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-          src="https://www.dramitsharma.info/drassets/img/ourexpertdetailbanner.jpg"
-          alt="Arthritis Background"
+        src="/images/service.webp"
+          alt="Arthritis operation"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -44,7 +44,7 @@ function Arthritis() {
           <div className="lg:w-3/4 w-full">
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
-                src="https://www.dramitsharma.info/public/uploads/service-banner-20.jpg"
+                src="/images/arthritist.webp"
                 alt="Arthritis"
                 className="w-full object-cover"
               />

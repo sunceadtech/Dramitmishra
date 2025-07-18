@@ -8,8 +8,8 @@ function Arthroscopy() {
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         {/* Background Image */}
         <img
-          src="https://www.dramitsharma.info/drassets/img/ourexpertdetailbanner.jpg"
-          alt="Arthroscopy Background"
+       src="/images/service.webp"
+          alt="ARTHROSCOPY Replacement"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
@@ -49,7 +49,7 @@ function Arthroscopy() {
           <div className="lg:w-3/4 w-full">
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
-                src="https://www.dramitsharma.info/public/uploads/service-banner-16.jpg"
+                src="/images/astro.webp"
                 alt="Arthroscopy"
                 className="w-full object-cover"
               />

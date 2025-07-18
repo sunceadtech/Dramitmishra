@@ -20,6 +20,7 @@ import MinimalInvaise from './component/services/MinimalInvaise';
 import NotFound from './component/footer/NotFound';
 //import SurgeryCheck from './component/services/SurgeryCheck';
 import Services from './component/services/Services';
+import ThankYou from './component/pages/ThankYou';
 const Approuter=()=>{
     return(
         <>
@@ -43,6 +44,7 @@ const Approuter=()=>{
         <Route path='/service-detail/osteoporosis' element={<Osteoprosis/>}/>
         <Route path='/service-detail/minimal-invasive-complex-trauma-surgery' element={<MinimalInvaise/>}/>
           <Route path="/service" element={<Services/>} />
+            <Route path="/thankyou" element={<ThankYou />} />
         {/*  <Route path="/surgery-check" element={<SurgeryCheck/>} />*/} 
         <Route path="*" element={<NotFound />} />
         </Routes>

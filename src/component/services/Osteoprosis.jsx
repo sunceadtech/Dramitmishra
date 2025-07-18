@@ -7,8 +7,8 @@ function Osteoprosis() {
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-          src="https://www.dramitsharma.info/drassets/img/ourexpertdetailbanner.jpg"
-          alt="Osteoporosis Background"
+         src="/images/service.webp"
+          alt="Osteoporosis operation"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -44,7 +44,7 @@ function Osteoprosis() {
           <div className="lg:w-3/4 w-full">
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
-                src="https://www.dramitsharma.info/public/uploads/service-banner-21.jpg"
+                src="/images/osteo.webp"
                 alt="Osteoporosis"
                 className="w-full object-cover"
               />

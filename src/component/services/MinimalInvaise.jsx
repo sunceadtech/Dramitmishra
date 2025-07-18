@@ -6,8 +6,8 @@ function MinimalInvaise() {
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-          src="https://www.dramitsharma.info/drassets/img/ourexpertdetailbanner.jpg"
-          alt="Minimally Invasive Surgery Background"
+          src="/images/service.webp"
+          alt="Minimally Invasive Surgery"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30"></div>
@@ -44,7 +44,7 @@ function MinimalInvaise() {
           <div className="lg:w-3/4 w-full">
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
-                src="https://www.dramitsharma.info/public/uploads/service-banner-22.jpg"
+                src="/images/minimal.webp"
                 alt="Minimally Invasive Surgery in Orthopedics"
                 className="w-full object-cover"
               />

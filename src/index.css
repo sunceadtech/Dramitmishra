@@ -1,24 +1,30 @@
 @import "tailwindcss";
 
+
 @layer utilities {
+  /* Enable smooth scroll globally */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Completely hide scrollbar for WebKit (Chrome, Safari) */
+  /* Scrollbar styling for all scrollable elements */
   ::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
+    width: 10px;
+    height: 10px;
   }
 
-  /* Hide scrollbar for Firefox */
-  * {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+  ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.purple.500'); /* Tailwind purple */
+    border-radius: 9999px; /* Fully rounded */
   }
 
-  *::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+  ::-webkit-scrollbar-track {
+    background-color: theme('colors.gray.100'); /* Light track */
   }
+}
+
+/* Firefox support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.purple.500') theme('colors.gray.100');
 }

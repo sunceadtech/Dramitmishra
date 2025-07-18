@@ -8,15 +8,13 @@ import "swiper/css/effect-fade";
 function Home() {
   const slides = [
     {
-      image:
-        "https://www.dramitsharma.info/drassets/img/homelatestbanner22.jpg",
+      image: "/images/heroimage.webp",
       title: "Expert Care for Every Step You Take",
       description:
         "We are dedicated to restoring your mobility and enhancing your quality of life with personalised treatment plans and advanced surgical techniques.",
     },
     {
-      image:
-        "https://www.dramitsharma.info/drassets/img/homelatestbanner25.jpg",
+      image: "/images/herobanner.webp",
       title: "Mastering Surgical Excellence for Optimal Outcomes",
       description:
         "With unparalleled expertise and cutting-edge techniques, we provide top-tier orthopaedic surgical care.",
@@ -24,7 +22,10 @@ function Home() {
   ];
 
   return (
-    <section className="relative w-full h-[90vh] overflow-hidden">
+    <section
+      className="relative w-full h-[90vh] overflow-hidden"
+      aria-label="Home Hero Section"
+    >
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
@@ -37,6 +38,8 @@ function Home() {
             {/* Desktop View */}
             <div
               className="hidden lg:block relative w-full h-[90vh] bg-cover bg-center"
+              aria-label={`Slide ${index + 1}`}
+              role="img"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 flex items-center justify-end p-6 xl:p-12 bg-gradient-to-l from-white/80 to-white/0">
@@ -47,18 +50,20 @@ function Home() {
                   <p className="text-gray-700 mb-6 text-base xl:text-lg">
                     {slide.description}
                   </p>
-                  <h3 className="text-xl font-semibold text-purple-800 mb-4">
+                  <h2 className="text-xl font-semibold text-purple-800 mb-4">
                     Book an Appointment
-                  </h3>
+                  </h2>
                   <div className="flex flex-col xl:flex-row gap-4 mb-6">
                     <Link
                       to="/contact"
+                      aria-label="Book appointment at Yashoda Super Speciality Hospital Kaushambi"
                       className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition text-sm text-center"
                     >
                       Yashoda Super Speciality Hospital, Kaushambi
                     </Link>
                     <Link
                       to="/contact"
+                      aria-label="Book appointment at City Clinic Krishna Nagar"
                       className="bg-white border border-purple-700 text-purple-700 px-4 py-2 rounded-md hover:bg-purple-100 transition text-sm text-center"
                     >
                       City Clinic, Krishna Nagar
@@ -93,11 +98,17 @@ function Home() {
             </div>
 
             {/* Mobile View */}
-            <div className="block lg:hidden bg-white min-h-screen">
-              <div
-                className="w-full h-[250px] sm:h-[300px] bg-cover bg-center"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              ></div>
+            <div
+              className="block lg:hidden bg-white min-h-screen"
+              role="region"
+              aria-label={`Mobile Slide ${index + 1}`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                loading="lazy"
+                className="w-full h-[250px] sm:h-[300px] object-cover"
+              />
 
               <div className="p-4 space-y-4 pb-16">
                 <h1 className="text-xl font-bold text-purple-900">
@@ -105,20 +116,22 @@ function Home() {
                 </h1>
                 <p className="text-gray-700 text-sm">{slide.description}</p>
 
-                <h3 className="text-lg font-semibold text-purple-800">
+                <h2 className="text-lg font-semibold text-purple-800">
                   Book an Appointment
-                </h3>
+                </h2>
 
                 <div className="flex flex-col sm:flex-row gap-4 mt-2">
                   <Link
                     to="/contact"
+                    aria-label="Book appointment at Yashoda Super Speciality Hospital Kaushambi"
                     className="bg-purple-700 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition text-sm text-center"
                   >
-                    Yashoda Super Speciality Hospital, Kaushambi
+                    Yashoda Hospital, Kaushambi
                   </Link>
                   <Link
                     to="/contact"
-                    className="bg-white border border-purple-700 text-purple-700 px-4 py-2  rounded-md hover:bg-purple-100 transition text-sm text-center"
+                    aria-label="Book appointment at City Clinic Krishna Nagar"
+                    className="bg-white border border-purple-700 text-purple-700 px-4 py-2 rounded-md hover:bg-purple-100 transition text-sm text-center"
                   >
                     City Clinic, Krishna Nagar
                   </Link>
