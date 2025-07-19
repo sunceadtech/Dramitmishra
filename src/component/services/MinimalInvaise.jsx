@@ -1,14 +1,17 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
 function MinimalInvaise() {
   return (
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
           src="/images/service.webp"
-          alt="Minimally Invasive Surgery"
+          alt="Minimally Invasive Surgery banner image"
           className="absolute inset-0 w-full h-full object-cover"
+          width="1600"
+          height="500"
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 h-full flex items-center justify-start">
@@ -26,7 +29,7 @@ function MinimalInvaise() {
                 to="/service"
                 className="hover:underline font-bold text-white/90"
               >
-                Services
+                Our Services
               </Link>
               <ChevronRight className="w-4 h-4" />
               <span className="text-white/80 font-bold text-sm sm:text-base">
@@ -47,6 +50,9 @@ function MinimalInvaise() {
                 src="/images/minimal.webp"
                 alt="Minimally Invasive Surgery in Orthopedics"
                 className="w-full object-cover"
+                loading="lazy"
+                width="1200"
+                height="650"
               />
             </div>
 
@@ -106,13 +112,13 @@ function MinimalInvaise() {
               <hr className="my-6" />
               <div className="bg-blue-50 p-6 rounded text-center">
                 <h3 className="text-xl font-bold mb-2">
-                  Considering Advanced Trauma Surgery? Book an Appointment Today
+                  Ready for Advanced Orthopedic Care?
                 </h3>
                 <Link
                   to="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
                 >
-                  Contact Us
+                  Book an Appointment with Dr. Amit Sharma
                 </Link>
               </div>
             </div>
@@ -131,7 +137,7 @@ function MinimalInvaise() {
                     to="/service"
                     className="hover:underline inline-block w-full"
                   >
-                    All Services
+                    View All Orthopedic Services
                   </Link>
                 </li>
                 <li className="py-3">
@@ -139,7 +145,7 @@ function MinimalInvaise() {
                     to="/service-detail/knee-replacement"
                     className="hover:underline inline-block w-full"
                   >
-                    Knee Replacement
+                    Total Knee Replacement
                   </Link>
                 </li>
                 <li className="py-3">
@@ -147,7 +153,7 @@ function MinimalInvaise() {
                     to="/service-detail/hip-replacement"
                     className="hover:underline inline-block w-full"
                   >
-                    Hip Replacement
+                    Hip Replacement Surgery
                   </Link>
                 </li>
                 <li className="py-3">
@@ -155,7 +161,7 @@ function MinimalInvaise() {
                     to="/service-detail/arthroscopy"
                     className="hover:underline inline-block w-full"
                   >
-                    Arthroscopy
+                    Diagnostic & Surgical Arthroscopy
                   </Link>
                 </li>
                 <li className="py-3">
@@ -163,7 +169,7 @@ function MinimalInvaise() {
                     to="/service-detail/acl-and-pcl-reconstruction"
                     className="hover:underline inline-block w-full"
                   >
-                    ACL and PCL Reconstruction
+                    ACL & PCL Ligament Reconstruction
                   </Link>
                 </li>
                 <li className="py-3">
@@ -171,7 +177,7 @@ function MinimalInvaise() {
                     to="/service-detail/sports-injury"
                     className="hover:underline inline-block w-full"
                   >
-                    Sports Injury
+                    Sports Injury Treatment
                   </Link>
                 </li>
                 <li className="py-3">
@@ -179,7 +185,7 @@ function MinimalInvaise() {
                     to="/service-detail/arthritis"
                     className="hover:underline inline-block w-full"
                   >
-                    Arthritis
+                    Arthritis Management
                   </Link>
                 </li>
                 <li className="py-3">
@@ -187,7 +193,7 @@ function MinimalInvaise() {
                     to="/service-detail/osteoporosis"
                     className="hover:underline inline-block w-full"
                   >
-                    Osteoporosis
+                    Osteoporosis Treatment
                   </Link>
                 </li>
                 <li className="py-3">

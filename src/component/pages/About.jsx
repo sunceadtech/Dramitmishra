@@ -32,9 +32,13 @@ function About() {
             </p>
             <nav
               className="flex items-center gap-2 text-sm text-white"
-              aria-label="Breadcrumb"
+              aria-label="Breadcrumb navigation for About page"
             >
-              <Link to="/" className="hover:underline">
+              <Link
+                to="/"
+                className="hover:underline"
+                aria-label="Go to Home page"
+              >
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
@@ -145,7 +149,13 @@ function About() {
                 <li>
                   Yashoda Super Speciality Hospital, Ghaziabad <br />
                   <strong>
-                    Call @ <a href="tel:+918750056560">8750056560</a>
+                    Call @{" "}
+                    <a
+                      href="tel:+918750056560"
+                      aria-label="Call Yashoda Hospital"
+                    >
+                      8750056560
+                    </a>
                   </strong>
                 </li>
               </ul>
@@ -162,7 +172,10 @@ function About() {
                 <li>
                   Opp. Swarn Cinema, near Surya Hospital, Delhi <br />
                   <strong>
-                    Call @ <a href="tel:+918826629486">8826629486</a>
+                    Call @{" "}
+                    <a href="tel:+918826629486" aria-label="Call City Clinic">
+                      8826629486
+                    </a>
                   </strong>
                 </li>
                 <li>
@@ -170,6 +183,7 @@ function About() {
                   <a
                     href="mailto:amit9851@yahoo.com"
                     className="underline text-blue-600"
+                    aria-label="Email Dr. Amit Sharma"
                   >
                     amit9851@yahoo.com
                   </a>
@@ -182,7 +196,7 @@ function About() {
             <Link
               to="/service"
               className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition"
-              aria-label="View all orthopedic services"
+              aria-label="Explore all orthopedic services offered by Dr. Amit Sharma"
             >
               View All Services
             </Link>
@@ -203,7 +217,7 @@ function About() {
           <Link
             to="/contact"
             className="bg-white text-purple-700 font-semibold px-5 py-2 rounded-full shadow hover:bg-purple-100 transition duration-200"
-            aria-label="Book an appointment with Dr. Amit Sharma"
+            aria-label="Schedule an appointment with orthopedic surgeon Dr. Amit Sharma"
           >
             Book Appointment
           </Link>

@@ -33,7 +33,7 @@ function Services() {
       link: "/service-detail/hip-replacement",
     },
     {
-      title: "Minimally Invasive Surgeries in Orthopedic Trauma Care",
+      title: "Minimally Invasive Trauma Surgery",
       image: "/images/minimal.webp",
       excerpt:
         "Advanced surgical techniques for orthopedic trauma that reduce recovery time and improve patient outcomes.",
@@ -47,14 +47,14 @@ function Services() {
       link: "/service-detail/sports-injury",
     },
     {
-      title: "Arthritis",
+      title: "Arthritis Treatment",
       image: "/images/arthritist.webp",
       excerpt:
         "Manage chronic arthritis effectively with modern treatment options and expert guidance for joint care.",
       link: "/service-detail/arthritis",
     },
     {
-      title: "Osteoporosis",
+      title: "Osteoporosis Management",
       image: "/images/osteo.webp",
       excerpt:
         "Learn how early detection and proper treatment can help manage osteoporosis and prevent fractures.",
@@ -71,36 +71,33 @@ function Services() {
       >
         <img
           src="/images/service.webp"
-          alt="Orthopedic Services Banner"
+          alt="Expert Orthopedic Services Banner"
           className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
+          width={1920}
+          height={500}
+          loading="eager"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
         <div className="relative z-10 h-full flex items-center justify-start">
-          <div className="max-w-3xl px-4 md:px-32 text-center md:text-left">
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
-              Our Expertise
+          <div className="max-w-4xl px-6 md:px-32 text-center md:text-left">
+            <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 leading-tight">
+              Our Expertise in Orthopedic Care
             </h1>
             <nav
-              className="flex flex-wrap justify-center md:justify-start items-center gap-1 sm:gap-2 text-sm text-white uppercase"
+              className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-white text-sm"
               aria-label="Breadcrumb"
             >
-              <Link to="/" className="hover:underline font-bold text-white/90">
+              <Link to="/" className="hover:underline font-semibold">
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" />
-              <Link
-                to="/service"
-                className="hover:underline font-bold text-white/90"
-              >
-                Our Expertise
-              </Link>
+              <span className="font-semibold">Our Expertise</span>
             </nav>
           </div>
         </div>
       </header>
 
-      {/* Services Grid Section */}
+      {/* Services Section */}
       <section className="py-16 bg-gray-50" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4">
           <h2
@@ -119,22 +116,24 @@ function Services() {
             {blogs.map((blog, index) => (
               <article
                 key={index}
-                className="bg-white rounded-lg shadow-md overflow-hidden group transition duration-300 ease-in-out hover:shadow-lg"
+                className="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl group"
                 itemScope
                 itemType="https://schema.org/MedicalWebPage"
               >
-                <div className="relative">
+                <figure className="relative">
                   <img
                     src={blog.image}
-                    alt={`Illustration of ${blog.title}`}
-                    className="w-full h-52 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    alt={`${blog.title} - Orthopedic Service`}
+                    className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={400}
+                    height={208}
                     loading="lazy"
                     itemProp="image"
                   />
-                </div>
-                <div className="p-4">
+                </figure>
+                <div className="p-5">
                   <h3
-                    className="text-lg font-semibold text-purple-800 mb-2"
+                    className="text-xl font-bold text-purple-800 mb-2"
                     itemProp="name"
                   >
                     <Link to={blog.link} className="hover:underline">
@@ -142,14 +141,14 @@ function Services() {
                     </Link>
                   </h3>
                   <p
-                    className="text-sm text-gray-600 mb-3"
+                    className="text-sm text-gray-700 mb-3"
                     itemProp="description"
                   >
                     {blog.excerpt}
                   </p>
                   <Link
                     to={blog.link}
-                    className="text-purple-600 hover:underline text-sm font-medium"
+                    className="text-purple-700 hover:underline font-medium text-sm"
                     aria-label={`Read more about ${blog.title}`}
                   >
                     Read more about {blog.title}

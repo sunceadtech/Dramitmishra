@@ -6,17 +6,14 @@ function Knee() {
   return (
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
-        {/* Background Image */}
         <img
           src="/images/service.webp"
-          alt="Knee Replacement"
+          alt="Knee Replacement Banner"
+          width="1920"
+          height="500"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>
-
-        {/* Banner Content */}
         <div className="relative z-10 h-full flex items-center justify-start">
           <div className="max-w-3xl px-4 md:px-32 text-center md:text-left">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
@@ -42,19 +39,18 @@ function Knee() {
         </div>
       </div>
 
-      {/* Content Section */}
       <div className="py-10 bg-white">
         <div className="max-w-7xl mx-auto lg:flex lg:gap-8 px-2 sm:px-4">
-          {/* Main Content */}
           <div className="lg:w-3/4 w-full">
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
                 src="/images/knee.webp"
-                alt="Knee Replacement"
+                alt="Knee Replacement Procedure Image"
+                width="1200"
+                height="675"
                 className="w-full object-cover"
               />
             </div>
-
             <div className="pt-2 space-y-6 text-gray-700 text-[15px]">
               <section className="py-10 bg-white">
                 <div className="container mx-auto px-4 text-gray-700">
@@ -69,9 +65,9 @@ function Knee() {
                     of metal and plastic.
                   </p>
                   <p className="mb-6">
-                    The two main types are:
-                    <strong> Total Knee Replacement (TKR)</strong> and
-                    <strong> Partial Knee Replacement (PKR)</strong>, depending
+                    The two main types are:{" "}
+                    <strong>Total Knee Replacement (TKR)</strong> and{" "}
+                    <strong>Partial Knee Replacement (PKR)</strong>, depending
                     on the severity and location of the damage.
                   </p>
 
@@ -123,7 +119,6 @@ function Knee() {
                       <li>✔️ Planning based on severity and anatomy</li>
                     </ul>
                   </div>
-
                   <div className="mb-6">
                     <h4 className="text-xl font-semibold mb-2">
                       During Surgery
@@ -144,7 +139,6 @@ function Knee() {
                       <li>✔️ Incision closed with stitches or staples</li>
                     </ul>
                   </div>
-
                   <div className="mb-6">
                     <h4 className="text-xl font-semibold mb-2">Recovery</h4>
                     <ul className="list-disc list-inside space-y-2">
@@ -159,7 +153,6 @@ function Knee() {
                   </div>
                 </div>
               </section>
-
               <hr className="my-6" />
               <div className="bg-blue-50 p-6 rounded text-center">
                 <h3 className="text-xl font-bold mb-2">
@@ -168,6 +161,7 @@ function Knee() {
                 <Link
                   to="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+                  aria-label="Book Appointment with Dr. Amit Sharma"
                 >
                   Book Appointment
                 </Link>
@@ -175,9 +169,7 @@ function Knee() {
             </div>
           </div>
 
-          {/* Sidebar on the Right */}
           <aside className="lg:w-1/4 w-full mt-10 lg:mt-0 space-y-6 mb-6">
-            {/* Services Box */}
             <div className="bg-purple-700 text-white p-4 min-h-[400px] md:min-h-[550px] rounded shadow-sm">
               <h4 className="text-lg font-semibold text-slate-100 mb-4 md:text-3xl text-center">
                 Our Services
@@ -187,6 +179,7 @@ function Knee() {
                   <Link
                     to="/service"
                     className="hover:underline inline-block w-full"
+                    aria-label="View All Services"
                   >
                     All Services
                   </Link>
@@ -195,6 +188,7 @@ function Knee() {
                   <Link
                     to="/service-detail/knee-replacement"
                     className="hover:underline inline-block w-full"
+                    aria-label="Knee Replacement Service"
                   >
                     Knee Replacement
                   </Link>
@@ -203,6 +197,7 @@ function Knee() {
                   <Link
                     to="/service-detail/hip-replacement"
                     className="hover:underline inline-block w-full"
+                    aria-label="Hip Replacement Service"
                   >
                     Hip Replacement
                   </Link>
@@ -211,6 +206,7 @@ function Knee() {
                   <Link
                     to="/service-detail/arthroscopy"
                     className="hover:underline inline-block w-full"
+                    aria-label="Arthroscopy Service"
                   >
                     Arthroscopy
                   </Link>
@@ -219,6 +215,7 @@ function Knee() {
                   <Link
                     to="/service-detail/acl-and-pcl-reconstruction"
                     className="hover:underline inline-block w-full"
+                    aria-label="ACL and PCL Reconstruction Service"
                   >
                     ACL and PCL Reconstruction
                   </Link>
@@ -227,6 +224,7 @@ function Knee() {
                   <Link
                     to="/service-detail/sports-injury"
                     className="hover:underline inline-block w-full"
+                    aria-label="Sports Injury Service"
                   >
                     Sports Injury
                   </Link>
@@ -235,6 +233,7 @@ function Knee() {
                   <Link
                     to="/service-detail/arthritis"
                     className="hover:underline inline-block w-full"
+                    aria-label="Arthritis Treatment Service"
                   >
                     Arthritis
                   </Link>
@@ -243,6 +242,7 @@ function Knee() {
                   <Link
                     to="/service-detail/osteoporosis"
                     className="hover:underline inline-block w-full"
+                    aria-label="Osteoporosis Service"
                   >
                     Osteoporosis
                   </Link>
@@ -251,14 +251,13 @@ function Knee() {
                   <Link
                     to="/service-detail/minimal-invasive-complex-trauma-surgery"
                     className="hover:underline inline-block w-full"
+                    aria-label="Minimally Invasive Complex Trauma Surgery"
                   >
                     Minimally Invasive Trauma Surgery
                   </Link>
                 </li>
               </ul>
             </div>
-
-            {/* OPD Timings Box */}
             <div className="bg-white text-gray-800 min-h-[350px] p-4 rounded shadow-sm border">
               <h6 className="text-lg font-semibold mb-3">OPD TIMINGS</h6>
               <ul className="text-sm space-y-2">

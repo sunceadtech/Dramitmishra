@@ -4,40 +4,40 @@ import { FaQuoteLeft } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-function HomeCrawsel() {
-  const testimonials = [
-    {
-      name: "Mahender Rajput",
-      image: "/images/paitent1.webp",
-      text: "As a bodybuilder, my tendon injury was worrying. Dr. Amit reassured me and post-surgery, I was back in form. Truly grateful for his expert care.",
-    },
-    {
-      name: "Rahul Kumar",
-      image: "/images/testimonial1.webp",
-      text: "Walking was difficult until I met Dr. Amit. After surgery, I can move freely. He’s extremely kind and professional.",
-    },
-    {
-      name: "Pushplata Garg",
-      image: "/images/testimonial9.webp",
-      text: "I was hesitant about surgery, but Dr. Amit's confidence gave me courage. I feel young again!",
-    },
-    {
-      name: "Mrs. Karan",
-      image: "/images/testimonial10.webp",
-      text: "After thorough research, we chose Dr. Amit Sharma. My left knee replacement has been successful and pain-free.",
-    },
-    {
-      name: "Priya Sharma",
-      image: "/images/blog6.webp",
-      text: "At 72, I had bilateral knee surgery. Dr. Amit’s motivation and care helped me recover better than I expected.",
-    },
-    {
-      name: "Sita Bai",
-      image: "/images/testimonial4.webp",
-      text: "At 72, I underwent knee surgery on both legs. Thanks to Dr. Amit’s expert care and encouragement, I regained mobility faster than I imagined.",
-    },
-  ];
+const testimonials = [
+  {
+    name: "Mahender Rajput",
+    image: "/images/paitent1.webp",
+    text: "As a bodybuilder, my tendon injury was worrying. Dr. Amit reassured me and post-surgery, I was back in form. Truly grateful for his expert care.",
+  },
+  {
+    name: "Rahul Kumar",
+    image: "/images/testimonial1.webp",
+    text: "Walking was difficult until I met Dr. Amit. After surgery, I can move freely. He’s extremely kind and professional.",
+  },
+  {
+    name: "Pushplata Garg",
+    image: "/images/testimonial9.webp",
+    text: "I was hesitant about surgery, but Dr. Amit's confidence gave me courage. I feel young again!",
+  },
+  {
+    name: "Mrs. Karan",
+    image: "/images/testimonial10.webp",
+    text: "After thorough research, we chose Dr. Amit Sharma. My left knee replacement has been successful and pain-free.",
+  },
+  {
+    name: "Priya Sharma",
+    image: "/images/blog6.webp",
+    text: "At 72, I had bilateral knee surgery. Dr. Amit’s motivation and care helped me recover better than I expected.",
+  },
+  {
+    name: "Sita Bai",
+    image: "/images/testimonial4.webp",
+    text: "At 72, I underwent knee surgery on both legs. Thanks to Dr. Amit’s expert care and encouragement, I regained mobility faster than I imagined.",
+  },
+];
 
+function HomeCrawsel() {
   return (
     <section
       className="bg-gray-100 py-16 px-4 max-w-8xl"
@@ -65,6 +65,9 @@ function HomeCrawsel() {
           autoPlay
           interval={5000}
           stopOnHover
+          swipeable
+          emulateTouch
+          useKeyboardArrows
           className="mx-auto w-full md:w-[70vw]"
           renderArrowPrev={(onClickHandler, hasPrev, label) =>
             hasPrev && (
@@ -93,21 +96,27 @@ function HomeCrawsel() {
             )
           }
         >
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <figure
-              key={testimonial.name}
+              key={index}
               className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl shadow-md flex flex-col items-center text-center space-y-4"
             >
-              <FaQuoteLeft className="text-purple-400 text-2xl mb-2" />
+              <FaQuoteLeft
+                className="text-purple-400 text-2xl mb-2"
+                aria-hidden="true"
+              />
               <blockquote className="text-gray-700 text-base leading-relaxed max-w-md">
                 “{testimonial.text}”
               </blockquote>
-              <div className="w-32 h-32 rounded-full">
+              <div className="w-32 h-32 rounded-full overflow-hidden">
                 <img
                   src={testimonial.image}
                   alt={`Photo of ${testimonial.name}`}
                   loading="lazy"
-                  className="w-32 h-32 object-cover rounded-full"
+                  decoding="async"
+                  width="128"
+                  height="128"
+                  className="w-full h-full object-cover rounded-full"
                 />
               </div>
               <figcaption className="text-lg font-semibold text-purple-800 py-4 md:py-8">

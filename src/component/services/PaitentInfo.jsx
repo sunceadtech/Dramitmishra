@@ -1,119 +1,117 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
-import { FaFilePdf } from "react-icons/fa";
+import { FaFilePdf } from "react-icons/fa6";
 
-function PaitentInfo() {
-  const infoItems = [
-    {
-      title: "Natural Relief for Joint Pain",
-      image: "/images/paitent8.webp",
-      description:
-        "Explore natural ways to manage joint discomfort, including gentle exercises, posture improvement, and anti-inflammatory foods that support joint health.",
-      pdf: "https://www.orthobethesda.com/wp-content/uploads/2019/10/Arthritis-Relief-Tips.pdf",
-    },
-    {
-      title: "Fracture Treatment & Healing Process",
-      image: "/images/paitent2.webp",
-      description:
-        "Understand how fractures are diagnosed and treated, from casting and immobilization to surgical intervention and physiotherapy for recovery.",
-    },
-    {
-      title: "Spine Health & Back Pain Relief",
-      image: "/images/paitent3.webp",
-      description:
-        "Learn about common spinal issues, posture correction, and non-surgical treatments to relieve lower back and neck pain effectively.",
-    },
-    {
-      title: "Post-Surgery Care & Recovery Tips",
-      image: "/images/paitent4.webp",
-      description:
-        "Essential steps after orthopedic surgery — from wound care and mobility aids to safe home exercises that boost healing.",
-    },
-    {
-      title: "Understanding Rheumatoid Arthritis",
-      image: "/images/paitent5.webp",
-      description:
-        "Get insights into rheumatoid arthritis symptoms, diagnosis, and treatment options including medications and lifestyle support.",
-    },
-    {
-      title: "Orthopedic Tips for Active Lifestyle",
-      image: "/images/paitent7.webp",
-      description:
-        "Stay injury-free with orthopedic advice for athletes and fitness lovers — covering joint protection, gear use, and body mechanics.",
-    },
-  ];
+const info = [
+  {
+    title: "Knee Replacement",
+    image: "/images/knee.webp",
+    description:
+      "Learn how total knee replacement can relieve chronic pain and improve mobility through modern orthopedic techniques.",
+    pdf: "https://en.wikipedia.org/wiki/Knee_replacement",
+  },
+  {
+    title: "Hip Replacement",
+    image: "/images/hip.webp",
+    description:
+      "Understand hip replacement surgery, its recovery process, and how it restores freedom of movement.",
+    pdf: "https://en.wikipedia.org/wiki/Hip_replacement",
+  },
+  {
+    title: "ACL Reconstruction",
+    image: "/images/aclpcl.webp",
+    description:
+      "Find out how ACL reconstruction helps athletes and active individuals return to full function after injury.",
+    pdf: "https://en.wikipedia.org/wiki/Anterior_cruciate_ligament_reconstruction",
+  },
+  {
+    title: "Shoulder Arthroscopy",
+    image: "/images/paitent4.webp",
+    description:
+      "Explore how minimally invasive shoulder arthroscopy treats rotator cuff tears and joint pain effectively.",
+    pdf: "https://en.wikipedia.org/wiki/Shoulder_problem",
+  },
+];
 
+const PaitentInfo = () => {
   return (
-    <>
-      <header className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
+    <main className="w-full bg-white">
+      {/* Banner */}
+      <section className="relative w-full h-[300px] md:h-[500px] overflow-hidden">
         <img
           src="/images/paitentinfo.webp"
-          alt="Orthopedic Patient Education Banner"
+          alt="Patient Information Banner - Orthopedic Services"
+          width={1920}
+          height={500}
+          loading="eager"
           className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
         />
-        <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
-        <div className="relative z-10 h-full flex items-center justify-start">
-          <div className="max-w-3xl px-6 md:px-20">
-            <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
-              Patient Information
-            </h1>
-
-            {/* Hidden SEO Supporting Content */}
-            <div className="sr-only">
-              <h2>Conservative Treatment of Osteoarthritis</h2>
-              <h3>Total Knee Replacement</h3>
-              <h4>ACL Injury and Reconstruction</h4>
-            </div>
-
-            {/* Breadcrumb */}
-            <nav
-              aria-label="Breadcrumb"
-              className="flex items-center gap-2 text-sm text-white"
-            >
-              <Link to="/" className="hover:underline">
-                Home
-              </Link>
-              <ChevronRight className="w-4 h-4" aria-hidden="true" />
-              <span className="font-semibold">Patient Information</span>
-            </nav>
-          </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+            Orthopedic Patient Education Resources
+          </h1>
         </div>
-      </header>
+      </section>
 
-      <main className="max-w-6xl mx-auto px-4 py-12 space-y-12">
-        {infoItems.map((item, idx) => (
-          <article
-            key={idx}
-            className="flex flex-col md:flex-row gap-6 border-b pb-10"
-          >
-            {/* Image */}
-            <div className="w-full md:w-[320px]">
-              <img
-                src={item.image}
-                alt={`${item.title} Illustration`}
-                className="w-full h-full object-cover rounded-md"
-                loading="lazy"
-              />
-            </div>
+      {/* Content */}
+      <section className="max-w-6xl mx-auto px-4 py-12">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            Learn About Common Orthopedic Treatments
+          </h2>
+          <p className="mt-2 text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
+            Explore our trusted resources and download informative PDFs to
+            understand your condition and treatment options.
+          </p>
+        </div>
 
-            {/* Text Content */}
-            <section className="flex-1 flex flex-col justify-center">
-              <header className="flex items-center gap-3 mb-2">
-                <h2 className="text-lg md:text-xl font-semibold text-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {info.map((item, idx) => (
+            <article
+              key={idx}
+              className="flex flex-col md:flex-row gap-6 border-b pb-10"
+              aria-labelledby={`info-title-${idx}`}
+            >
+              {/* Image */}
+              <div className="w-full md:w-[320px] shrink-0">
+                <img
+                  src={item.image}
+                  alt={`${item.title} illustration`}
+                  width={320}
+                  height={240}
+                  className="w-full h-full object-cover rounded-md"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Text Content */}
+              <div className="flex-1 flex flex-col justify-center">
+                <h3
+                  id={`info-title-${idx}`}
+                  className="text-xl font-semibold text-gray-800 mb-2"
+                >
                   {item.title}
-                </h2>
-              </header>
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                {item.description}
-              </p>
-            </section>
-          </article>
-        ))}
-      </main>
-    </>
+                </h3>
+                <p className="text-gray-700 text-base leading-relaxed">
+                  {item.description}
+                </p>
+                {item.pdf && (
+                  <a
+                    href={item.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline mt-3 inline-flex items-center gap-2"
+                  >
+                    <FaFilePdf className="w-4 h-4" />
+                    Download PDF about {item.title}
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
-}
+};
 
 export default PaitentInfo;

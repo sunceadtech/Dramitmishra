@@ -8,9 +8,11 @@ function AclandPcl() {
       {/* Banner Section */}
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-        src="/images/service.webp"
+          src="/images/service.webp"
           alt="ACL and PCL Reconstruction operation"
           className="absolute inset-0 w-full h-full object-cover"
+          width="1920"
+          height="500"
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 h-full flex items-center justify-start">
@@ -19,13 +21,18 @@ function AclandPcl() {
               ACL and PCL Reconstruction
             </h1>
             <div className="flex flex-wrap items-center gap-1 sm:gap-2 text-xs sm:text-sm text-white uppercase">
-              <Link to="/" className="hover:underline font-bold text-white/90">
+              <Link
+                to="/"
+                className="hover:underline font-bold text-white/90"
+                aria-label="Go to homepage"
+              >
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" />
               <Link
                 to="/service"
                 className="hover:underline font-bold text-white/90"
+                aria-label="View all services"
               >
                 Services
               </Link>
@@ -48,6 +55,8 @@ function AclandPcl() {
                 src="https://www.dramitsharma.info/public/uploads/service-banner-18.jpg"
                 alt="ACL and PCL Reconstruction"
                 className="w-full object-cover"
+                width="1200"
+                height="600"
               />
             </div>
 
@@ -135,6 +144,7 @@ function AclandPcl() {
                 <Link
                   to="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+                  aria-label="Book appointment for ACL and PCL surgery"
                 >
                   Book Appointment
                 </Link>
@@ -153,6 +163,7 @@ function AclandPcl() {
                   <Link
                     to="/service"
                     className="hover:underline inline-block w-full"
+                    aria-label="View all services"
                   >
                     All Services
                   </Link>
@@ -161,6 +172,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/knee-replacement"
                     className="hover:underline inline-block w-full"
+                    aria-label="Knee Replacement Details"
                   >
                     Knee Replacement
                   </Link>
@@ -169,6 +181,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/hip-replacement"
                     className="hover:underline inline-block w-full"
+                    aria-label="Hip Replacement Details"
                   >
                     Hip Replacement
                   </Link>
@@ -177,6 +190,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/arthroscopy"
                     className="hover:underline inline-block w-full"
+                    aria-label="Arthroscopy Services"
                   >
                     Arthroscopy
                   </Link>
@@ -185,6 +199,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/acl-and-pcl-reconstruction"
                     className="hover:underline inline-block w-full"
+                    aria-label="ACL and PCL Reconstruction Service"
                   >
                     ACL and PCL Reconstruction
                   </Link>
@@ -193,6 +208,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/sports-injury"
                     className="hover:underline inline-block w-full"
+                    aria-label="Sports Injury Treatment"
                   >
                     Sports Injury
                   </Link>
@@ -201,6 +217,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/arthritis"
                     className="hover:underline inline-block w-full"
+                    aria-label="Arthritis Treatment"
                   >
                     Arthritis
                   </Link>
@@ -209,6 +226,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/osteoporosis"
                     className="hover:underline inline-block w-full"
+                    aria-label="Osteoporosis Treatment"
                   >
                     Osteoporosis
                   </Link>
@@ -217,6 +235,7 @@ function AclandPcl() {
                   <Link
                     to="/service-detail/minimal-invasive-complex-trauma-surgery"
                     className="hover:underline inline-block w-full"
+                    aria-label="Minimally Invasive Trauma Surgery"
                   >
                     Minimally Invasive Trauma Surgery
                   </Link>

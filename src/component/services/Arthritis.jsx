@@ -7,9 +7,12 @@ function Arthritis() {
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-        src="/images/service.webp"
+          src="/images/service.webp"
           alt="Arthritis operation"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          width="1920"
+          height="500"
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 h-full flex items-center justify-start">
@@ -45,8 +48,11 @@ function Arthritis() {
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
                 src="/images/arthritist.webp"
-                alt="Arthritis"
+                alt="Understanding Arthritis"
                 className="w-full object-cover"
+                loading="lazy"
+                width="800"
+                height="400"
               />
             </div>
 
@@ -149,8 +155,9 @@ function Arthritis() {
                 <Link
                   to="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+                  aria-label="Contact us for arthritis treatment appointment"
                 >
-                  Contact Us
+                  Contact Dr. Amit Sharma
                 </Link>
               </div>
             </div>
@@ -165,74 +172,47 @@ function Arthritis() {
               </h4>
               <ul className="text-sm md:text-md font-bold divide-y divide-purple-500 text-center">
                 <li className="py-3">
-                  <Link
-                    to="/service"
-                    className="hover:underline inline-block w-full"
-                  >
-                    All Services
+                  <Link to="/service" className="hover:underline inline-block w-full">
+                    Explore All Services
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/knee-replacement"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Knee Replacement
+                  <Link to="/service-detail/knee-replacement" className="hover:underline inline-block w-full">
+                    Knee Replacement Surgery Details
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/hip-replacement"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Hip Replacement
+                  <Link to="/service-detail/hip-replacement" className="hover:underline inline-block w-full">
+                    Hip Replacement Overview
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/arthroscopy"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Arthroscopy
+                  <Link to="/service-detail/arthroscopy" className="hover:underline inline-block w-full">
+                    Arthroscopy Procedure Info
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/acl-and-pcl-reconstruction"
-                    className="hover:underline inline-block w-full"
-                  >
-                    ACL and PCL Reconstruction
+                  <Link to="/service-detail/acl-and-pcl-reconstruction" className="hover:underline inline-block w-full">
+                    ACL & PCL Reconstruction Guide
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/sports-injury"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Sports Injury
+                  <Link to="/service-detail/sports-injury" className="hover:underline inline-block w-full">
+                    Sports Injury Treatment
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/arthritis"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Arthritis
+                  <Link to="/service-detail/arthritis" className="hover:underline inline-block w-full">
+                    Arthritis Care Options
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/osteoporosis"
-                    className="hover:underline inline-block w-full"
-                  >
-                    Osteoporosis
+                  <Link to="/service-detail/osteoporosis" className="hover:underline inline-block w-full">
+                    Osteoporosis Management
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link
-                    to="/service-detail/minimal-invasive-complex-trauma-surgery"
-                    className="hover:underline inline-block w-full"
-                  >
+                  <Link to="/service-detail/minimal-invasive-complex-trauma-surgery" className="hover:underline inline-block w-full">
                     Minimally Invasive Trauma Surgery
                   </Link>
                 </li>

@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-
+@font-face {
+  font-display: swap;
+}
 @layer utilities {
   /* Enable smooth scroll globally */
   html {
     scroll-behavior: smooth;
   }
+
 
   /* Scrollbar styling for all scrollable elements */
   ::-webkit-scrollbar {

@@ -14,7 +14,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6 relative text-sm leading-relaxed">
-      {/* Floating WhatsApp CTA */}
       <a
         href="https://api.whatsapp.com/send?phone=+918826629486&text=Hello,I%20want%20to%20book%20an%20Appointment"
         className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-600"
@@ -25,7 +24,6 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-          {/* Logo & About */}
           <div>
             <img
               src="https://www.dramitsharma.info/drassets/img/footer.png"
@@ -33,7 +31,7 @@ export default function Footer() {
               className="mb-4 w-40"
               loading="lazy"
               width="160"
-              height="auto"
+              height="80"
             />
             <p className="text-gray-300">
               Dr. Amit Sharma is a senior orthopedic surgeon in Delhi NCR with
@@ -43,9 +41,9 @@ export default function Footer() {
             <Link
               to="/about"
               className={`${hoverLink} text-purple-400 mt-2 inline-block`}
-              aria-label="About Dr. Amit Sharma"
+              aria-label="Learn more about Dr. Amit Sharma"
             >
-              Read More
+              Read More About Dr. Sharma
             </Link>
 
             <div className="flex gap-4 mt-4" aria-label="Social media links">
@@ -53,7 +51,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile?id=61560396193559"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Facebook profile of Dr. Amit Sharma"
                 className={hoverLink}
               >
                 <FaFacebookF />
@@ -62,7 +60,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/amit-sharma-175232a4/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn profile of Dr. Amit Sharma"
                 className={hoverLink}
               >
                 <FaLinkedinIn />
@@ -71,7 +69,7 @@ export default function Footer() {
                 href="https://www.instagram.com/amit9851"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
+                aria-label="Instagram profile of Dr. Amit Sharma"
                 className={hoverLink}
               >
                 <FaInstagram />
@@ -79,8 +77,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Useful Links */}
-          <nav aria-label="Useful links">
+          <nav aria-label="Useful website links">
             <h2 className="text-lg font-semibold text-purple-400 mb-3">
               Useful Links
             </h2>
@@ -97,7 +94,7 @@ export default function Footer() {
                   <Link
                     to={`/${path}`}
                     className={hoverLink}
-                    aria-label={path.replace(/-/g, " ")}
+                    aria-label={`Go to ${path.replace(/-/g, " ")}`}
                   >
                     {path.charAt(0).toUpperCase() +
                       path.slice(1).replace(/-/g, " ")}
@@ -107,8 +104,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Specializations */}
-          <nav aria-label="Specializations">
+          <nav aria-label="Dr. Amit Sharma's Specializations">
             <h2 className="text-lg font-semibold text-purple-400 mb-3">
               Specializations
             </h2>
@@ -130,7 +126,7 @@ export default function Footer() {
                   <Link
                     to={`/service-detail/${slug}`}
                     className={hoverLink}
-                    aria-label={label}
+                    aria-label={`Learn about ${label}`}
                   >
                     {label}
                   </Link>
@@ -139,8 +135,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Clinic Hours */}
-          <div aria-label="Clinic hours and contact">
+          <div aria-label="Clinic hours and contact details">
             <h2 className="text-lg font-semibold text-purple-400 mb-3">
               Clinic Hours
             </h2>
@@ -172,7 +167,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Footer */}
         <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between text-gray-400">
           <p>
             &copy; {new Date().getFullYear()} Dr. Amit Sharma. All rights
@@ -183,7 +177,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className={`${hoverLink} text-purple-300`}
-            aria-label="Website developed by Sunce Adtech"
+            aria-label="Visit Sunce Adtech website"
           >
             Website by Sunce Adtech
           </a>

@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadComponent } from "react-lazy-load-image-component";
 
 function YoutubeContent() {
   const videoData = [
@@ -36,6 +37,7 @@ function YoutubeContent() {
 
   return (
     <>
+      {/* Doctor Speaks Section */}
       <section
         className="bg-gray-100 py-16 px-4"
         aria-labelledby="doctor-speaks-heading"
@@ -49,14 +51,18 @@ function YoutubeContent() {
             >
               Doctor Speaks
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base">
               Explore orthopedic insights, treatment options, and real patient
               journeys with Dr. Amit Sharma's expert video talks.
             </p>
           </header>
 
-          {/* Scrollable Video Section */}
-          <div className="overflow-x-auto scrollbar-hide" role="region" aria-label="Orthopedic Video Testimonials">
+          {/* Scrollable Videos */}
+          <div
+            className="overflow-x-auto scrollbar-hide"
+            role="region"
+            aria-label="Orthopedic Video Testimonials"
+          >
             <div className="flex space-x-6 min-w-full px-2 sm:px-4">
               {videoData.map((video, index) => (
                 <article
@@ -64,22 +70,22 @@ function YoutubeContent() {
                   className="min-w-[280px] sm:min-w-[320px] bg-white rounded-lg shadow-md border p-3"
                   aria-label={video.title}
                 >
-                  <div className="aspect-video w-full mb-3">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={video.url}
-                      title={`Dr. Amit Sharma: ${video.title}`}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      loading="lazy"
-                      className="rounded-md"
-                    ></iframe>
+                  <div className="aspect-video w-full mb-3 rounded-md overflow-hidden">
+                    <LazyLoadComponent>
+                      <iframe
+                        src={video.url}
+                        title={`Dr. Amit Sharma: ${video.title}`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                        className="w-full h-full"
+                      ></iframe>
+                    </LazyLoadComponent>
                   </div>
-                  <h4 className="font-semibold text-center text-sm text-purple-800">
+                  <h3 className="font-semibold text-center text-sm text-purple-800">
                     Dr. Amit Sharma
-                  </h4>
+                  </h3>
                   <p className="text-center text-gray-600 text-sm">
                     {video.desc}
                   </p>
@@ -96,7 +102,7 @@ function YoutubeContent() {
         aria-labelledby="joint-health-heading"
       >
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-          {/* Left Content */}
+          {/* Left Text Block */}
           <div className="bg-purple-900 text-white rounded-lg px-8 py-8 md:py-16 shadow-lg">
             <h2
               id="joint-health-heading"
@@ -108,8 +114,8 @@ function YoutubeContent() {
               Healthy joints are essential for staying mobile, independent, and
               pain-free. Whether you're walking, running, or simply doing daily
               tasks, joint care plays a key role. Learn how to protect your
-              joints with the right approach—ranging from expert orthopaedic
-              care to lifestyle changes that make a long-term difference.
+              joints with expert orthopaedic care and sustainable lifestyle
+              choices.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
@@ -126,15 +132,16 @@ function YoutubeContent() {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Block */}
           <div className="w-full">
             <img
               src="/images/kneepain.webp"
-              alt="Illustration of a person holding their knee in pain"
+              alt="Illustration showing joint pain in the knee"
               className="rounded-xl shadow-lg w-full object-cover"
-              loading="lazy"
               width="600"
               height="400"
+              loading="eager"
+              decoding="async"
             />
           </div>
         </div>
@@ -144,4 +151,5 @@ function YoutubeContent() {
 }
 
 export default YoutubeContent;
+
 

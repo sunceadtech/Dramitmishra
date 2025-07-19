@@ -23,19 +23,18 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const formPayload = {
+    const payload = {
       access_key: "d178f430-9dc9-4bf5-871b-b104717253a8",
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone || "Not provided",
-      message: formData.message,
+      subject: "dramitsharmaortho.com - New Appointment",
+      from_name: "dramitsharmaortho.com",
+      ...formData,
     };
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formPayload),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
@@ -61,6 +60,8 @@ function Contact() {
         <img
           src="/images/contact.webp"
           alt="Orthopedic contact background"
+          width="1920"
+          height="500"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
@@ -174,12 +175,17 @@ function Contact() {
               <MapPin className="text-black mt-1 w-6 h-6" aria-hidden="true" />
               <address>
                 Yashoda Super Speciality Hospital,
-                <br /> Kaushambi, Ghaziabad
+                <br />
+                Kaushambi, Ghaziabad
               </address>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Phone className="text-black w-6 h-6" aria-hidden="true" />
-              <a href="tel:+918750056560" className="underline">
+              <a
+                href="tel:+918750056560"
+                className="underline"
+                aria-label="Call +91-8750056560"
+              >
                 +91-8750056560
               </a>
             </div>
@@ -192,13 +198,21 @@ function Contact() {
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Phone className="text-black w-6 h-6" aria-hidden="true" />
-              <a href="tel:+918826629486" className="underline">
+              <a
+                href="tel:+918826629486"
+                className="underline"
+                aria-label="Call +91-8826629486"
+              >
                 +91-8826629486
               </a>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Mail className="text-black w-6 h-6" aria-hidden="true" />
-              <a href="mailto:amit9851@yahoo.com" className="underline">
+              <a
+                href="mailto:amit9851@yahoo.com"
+                className="underline"
+                aria-label="Email amit9851@yahoo.com"
+              >
                 amit9851@yahoo.com
               </a>
             </div>
@@ -209,6 +223,7 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
+                aria-label="Visit www.dramitsharma.info"
               >
                 www.dramitsharma.info
               </a>

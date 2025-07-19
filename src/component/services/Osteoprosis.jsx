@@ -7,9 +7,12 @@ function Osteoprosis() {
     <>
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
-         src="/images/service.webp"
+          src="/images/service.webp"
           alt="Osteoporosis operation"
           className="absolute inset-0 w-full h-full object-cover"
+          width="1920"
+          height="500"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="relative z-10 h-full flex items-center justify-start">
@@ -45,8 +48,11 @@ function Osteoprosis() {
             <div className="rounded overflow-hidden shadow-md mb-0">
               <img
                 src="/images/osteo.webp"
-                alt="Osteoporosis"
+                alt="Osteoporosis illustration"
                 className="w-full object-cover"
+                width="1024"
+                height="500"
+                loading="lazy"
               />
             </div>
 
@@ -139,7 +145,7 @@ function Osteoprosis() {
                   to="/contact"
                   className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
                 >
-                  Contact Us
+                  Contact Dr. Amit Sharma
                 </Link>
               </div>
             </div>
@@ -158,7 +164,7 @@ function Osteoprosis() {
                     to="/service"
                     className="hover:underline inline-block w-full"
                   >
-                    All Services
+                    View All Services by Dr. Amit Sharma
                   </Link>
                 </li>
                 <li className="py-3">
@@ -166,7 +172,7 @@ function Osteoprosis() {
                     to="/service-detail/knee-replacement"
                     className="hover:underline inline-block w-full"
                   >
-                    Knee Replacement
+                    Learn About Knee Replacement
                   </Link>
                 </li>
                 <li className="py-3">
@@ -174,7 +180,7 @@ function Osteoprosis() {
                     to="/service-detail/hip-replacement"
                     className="hover:underline inline-block w-full"
                   >
-                    Hip Replacement
+                    Explore Hip Replacement Options
                   </Link>
                 </li>
                 <li className="py-3">
@@ -182,7 +188,7 @@ function Osteoprosis() {
                     to="/service-detail/arthroscopy"
                     className="hover:underline inline-block w-full"
                   >
-                    Arthroscopy
+                    Arthroscopy Procedures Explained
                   </Link>
                 </li>
                 <li className="py-3">
@@ -190,7 +196,7 @@ function Osteoprosis() {
                     to="/service-detail/acl-and-pcl-reconstruction"
                     className="hover:underline inline-block w-full"
                   >
-                    ACL and PCL Reconstruction
+                    ACL & PCL Reconstruction Services
                   </Link>
                 </li>
                 <li className="py-3">
@@ -198,7 +204,7 @@ function Osteoprosis() {
                     to="/service-detail/sports-injury"
                     className="hover:underline inline-block w-full"
                   >
-                    Sports Injury
+                    Treating Sports Injuries
                   </Link>
                 </li>
                 <li className="py-3">
@@ -206,7 +212,7 @@ function Osteoprosis() {
                     to="/service-detail/arthritis"
                     className="hover:underline inline-block w-full"
                   >
-                    Arthritis
+                    Arthritis Management Techniques
                   </Link>
                 </li>
                 <li className="py-3">
@@ -214,7 +220,7 @@ function Osteoprosis() {
                     to="/service-detail/osteoporosis"
                     className="hover:underline inline-block w-full"
                   >
-                    Osteoporosis
+                    Osteoporosis Treatments
                   </Link>
                 </li>
                 <li className="py-3">
@@ -222,7 +228,7 @@ function Osteoprosis() {
                     to="/service-detail/minimal-invasive-complex-trauma-surgery"
                     className="hover:underline inline-block w-full"
                   >
-                    Minimally Invasive Trauma Surgery
+                    Minimally Invasive Trauma Surgery Info
                   </Link>
                 </li>
               </ul>

@@ -81,7 +81,7 @@ function Blog() {
             <nav aria-label="Breadcrumb">
               <ol className="flex items-center gap-2 text-sm text-white">
                 <li>
-                  <Link to="/" className="hover:underline" aria-label="Home">
+                  <Link to="/" className="hover:underline" aria-label="Go to homepage">
                     Home
                   </Link>
                 </li>
@@ -113,7 +113,7 @@ function Blog() {
                 <header className="relative">
                   <img
                     src={blog.image}
-                    alt={blog.title}
+                    alt={`Blog post: ${blog.title}`}
                     className="w-full h-52 object-cover"
                     loading="lazy"
                     width="400"
@@ -133,7 +133,9 @@ function Blog() {
                     className="text-lg font-semibold text-slate-800 mb-2"
                     itemProp="headline"
                   >
-                    <Link to={blog.link}>{blog.title}</Link>
+                    <Link to={blog.link} aria-label={`Read full article: ${blog.title}`}>
+                      {blog.title}
+                    </Link>
                   </h3>
                   <p
                     className="text-sm text-gray-600 mb-3"
@@ -144,7 +146,7 @@ function Blog() {
                   <Link
                     to={blog.link}
                     className="text-purple-600 hover:underline text-sm font-medium"
-                    aria-label={`Read more about ${blog.title}`}
+                    aria-label={`Continue reading: ${blog.title}`}
                   >
                     Read more
                   </Link>

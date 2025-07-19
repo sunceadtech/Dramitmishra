@@ -1,55 +1,78 @@
-import React from 'react';
-import { CheckCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { CheckCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function ThankYou() {
   const navigate = useNavigate();
   const handleClose = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
-    <>
-      <div className="flex justify-center space-y-6 m-6 md:mt-28 mt-16">
-        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in">
-
-          <div className="text-center">
-            <div className="mx-auto flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-            </div>
-
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Thank You!
-            </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              <strong>Dr: Amit Sharma</strong> has received your message. Our team will contact you as soon as possible.Mean while you can contact below as well.
-            </p>
-
-            <div className="bg-blue-50 rounded-lg p-4 mb-6">
-              <p className="text-sm text-blue-800 mb-2">
-                <strong>Email:</strong> <span className="text-gray-700">amit9851@yahoo.com</span>
-              </p>
-              <p className="text-sm text-blue-800">
-                <strong>Phone:</strong> <span className="text-gray-700">+91-8750056560</span>
-              </p>
-            </div>
-
-
-            <button
-              onClick={handleClose}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-            >
-              Visit Our Website
-            </button>
+    <div className="flex justify-center space-y-6 m-6 md:mt-8 mt-16">
+      <div
+        className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-scale-in"
+        role="dialog"
+        aria-labelledby="thankyou-heading"
+      >
+        <div className="text-center">
+          <div
+            className="mx-auto flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6"
+            aria-hidden="true"
+          >
+            <CheckCircle className="w-8 h-8 text-green-600" />
           </div>
+
+          <h1
+            id="thankyou-heading"
+            className="text-2xl font-bold text-gray-900 mb-4"
+          >
+            Thank You!
+          </h1>
+
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            <strong>Dr. Amit Sharma</strong> has received your message. Our team
+            will contact you as soon as possible. Meanwhile, feel free to reach
+            us directly:
+          </p>
+
+          <div className="bg-blue-50 rounded-lg p-4 mb-6 text-left">
+            <p className="text-sm text-blue-800 mb-2">
+              <strong>Email:</strong>{" "}
+              <a
+                href="mailto:amit9851@yahoo.com"
+                className="text-gray-700 underline"
+                aria-label="Send email to Dr. Amit Sharma"
+              >
+                amit9851@yahoo.com
+              </a>
+            </p>
+            <p className="text-sm text-blue-800">
+              <strong>Phone:</strong>{" "}
+              <a
+                href="tel:+918750056560"
+                className="text-gray-700 underline"
+                aria-label="Call Dr. Amit Sharma"
+              >
+                +91-8750056560
+              </a>
+            </p>
+          </div>
+
+          <button
+            onClick={handleClose}
+            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            aria-label="Visit our website"
+          >
+            Visit Our Website
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
 export default ThankYou;
-
 
 // import React, { useEffect, useState } from "react";
 // import { motion, AnimatePresence } from "framer-motion";

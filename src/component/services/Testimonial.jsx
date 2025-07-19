@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import TestimonialCards from "./TestimonialCards";
 
-// Add canonical link via plain HTML
+// SEO: Title & Canonical
 document.title = "Patient Testimonials - Dr. Amit Sharma | Orthopedic Surgeon";
 const canonical = document.querySelector("link[rel='canonical']");
 if (!canonical) {
@@ -21,22 +21,18 @@ function Testimonial() {
       {/* Hero Section */}
       <section
         className="relative w-full h-[500px] md:h-[600px] overflow-hidden"
-        aria-label="Testimonials banner"
+        aria-label="Testimonials Banner"
       >
-        {/* Background Image */}
         <img
           src="/images/testimonial.webp"
-          alt="Smiling patient after orthopedic treatment"
+          alt="Happy orthopedic patient testimonial"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
           width="1920"
           height="1080"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/50" aria-hidden="true"></div>
 
-        {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center justify-start">
           <div className="max-w-3xl px-6 md:px-20 text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -44,7 +40,7 @@ function Testimonial() {
             </h1>
             <p className="text-lg md:text-xl mb-6 leading-relaxed">
               Hear what our patients say about their orthopedic care journey
-              with <strong>Dr. Amit Sharma</strong>. Real people, real recoveries.
+              with <strong>Dr. Amit Sharma</strong>. Real stories, real recoveries.
             </p>
 
             {/* Breadcrumb */}
@@ -55,9 +51,9 @@ function Testimonial() {
               <Link
                 to="/"
                 className="hover:underline text-white"
-                title="Back to Home"
+                title="Go to Dr. Amit Sharma's Home Page"
               >
-                Home - Dr. Amit Sharma Orthopedic
+                Home – Dr. Amit Sharma
               </Link>
               <ChevronRight className="w-4 h-4 text-white" />
               <span
@@ -71,13 +67,13 @@ function Testimonial() {
         </div>
       </section>
 
-      {/* Testimonial Cards */}
+      {/* Testimonial Cards Section */}
       <section
         aria-labelledby="testimonial-heading"
         className="bg-white text-gray-800 py-16"
       >
         <h2 id="testimonial-heading" className="sr-only">
-          Patient Testimonials Section
+          Real patient testimonials for orthopedic surgery and recovery
         </h2>
         <TestimonialCards />
       </section>
@@ -86,3 +82,4 @@ function Testimonial() {
 }
 
 export default Testimonial;
+

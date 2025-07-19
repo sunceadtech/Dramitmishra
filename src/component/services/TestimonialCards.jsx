@@ -91,10 +91,15 @@ function TestimonialCards() {
                   href={t.video}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Watch video testimonial by ${t.name}`}
+                  aria-label={`Watch ${
+                    t.name
+                  }'s video about their ${t.title.toLowerCase()}`}
                   className="absolute inset-0 flex items-center justify-center bg-black/50 text-white text-4xl hover:text-purple-400 rounded focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   <FaPlayCircle aria-hidden="true" />
+                  <span className="sr-only">
+                    Watch {t.name}'s video testimonial on {t.title}
+                  </span>
                 </a>
               )}
             </div>

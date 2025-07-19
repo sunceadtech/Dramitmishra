@@ -1,8 +1,54 @@
-import React, { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import React, { useState, lazy, Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Lazy load icons
+const FaPlus = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaPlus }))
+);
+const FaMinus = lazy(() =>
+  import("react-icons/fa").then((mod) => ({ default: mod.FaMinus }))
+);
+
+const faqs = [
+  {
+    question: "When should I consult a specialist for joint pain?",
+    answer:
+      "If your joint pain lasts more than a few weeks, worsens with movement, or limits daily activities, it’s time to consult an orthopedic specialist.",
+  },
+  {
+    question: "Is knee replacement the only solution for arthritis?",
+    answer:
+      "Not always. Early arthritis can often be managed with medications, physiotherapy, and lifestyle changes. Surgery is recommended only for advanced cases.",
+  },
+  {
+    question: "What are the benefits of minimally invasive orthopedic surgery?",
+    answer:
+      "Minimally invasive procedures result in smaller incisions, faster recovery, less pain, and reduced hospital stays compared to traditional surgery.",
+  },
+  {
+    question: "Do you offer treatments for sports injuries?",
+    answer:
+      "Yes, we treat a wide range of sports injuries including ligament tears, tendonitis, and joint dislocations through advanced techniques like arthroscopy.",
+  },
+  {
+    question: "Can osteoporosis be prevented or managed?",
+    answer:
+      "Yes, with a combination of regular weight-bearing exercise, calcium & vitamin D, and bone density monitoring, osteoporosis can be effectively managed.",
+  },
+];
+
 function HomeContact() {
+  return (
+    <section className="bg-gray-50 py-16 px-4" aria-labelledby="contact-title">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <ContactForm />
+        <FAQAccordion />
+      </div>
+    </section>
+  );
+}
+
+function ContactForm() {
   const [contact, setContact] = useState({
     name: "",
     phone: "",
@@ -10,43 +56,9 @@ function HomeContact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(null);
   const navigate = useNavigate();
 
-  const toggleFAQ = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
-
-  const faqs = [
-    {
-      question: "When should I consult a specialist for joint pain?",
-      answer:
-        "If your joint pain lasts more than a few weeks, worsens with movement, or limits daily activities, it’s time to consult an orthopedic specialist.",
-    },
-    {
-      question: "Is knee replacement the only solution for arthritis?",
-      answer:
-        "Not always. Early arthritis can often be managed with medications, physiotherapy, and lifestyle changes. Surgery is recommended only for advanced cases.",
-    },
-    {
-      question:
-        "What are the benefits of minimally invasive orthopedic surgery?",
-      answer:
-        "Minimally invasive procedures result in smaller incisions, faster recovery, less pain, and reduced hospital stays compared to traditional surgery.",
-    },
-    {
-      question: "Do you offer treatments for sports injuries?",
-      answer:
-        "Yes, we treat a wide range of sports injuries including ligament tears, tendonitis, and joint dislocations through advanced techniques like arthroscopy.",
-    },
-    {
-      question: "Can osteoporosis be prevented or managed?",
-      answer:
-        "Yes, with a combination of regular weight-bearing exercise, calcium & vitamin D, and bone density monitoring, osteoporosis can be effectively managed.",
-    },
-  ];
-
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setContact((prev) => ({ ...prev, [name]: value }));
   };
@@ -54,9 +66,10 @@ function HomeContact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     const payload = {
       access_key: "d178f430-9dc9-4bf5-871b-b104717253a8",
+      subject: "dramitsharmaortho.com - New Appointment",
+      from_name: "dramitsharmaortho.com",
       ...contact,
     };
 
@@ -68,6 +81,7 @@ function HomeContact() {
       });
 
       const result = await response.json();
+      console.log(result);
       if (result.success) {
         navigate("/thankyou");
         setContact({ name: "", phone: "", email: "", message: "" });
@@ -83,136 +97,106 @@ function HomeContact() {
   };
 
   return (
-    <section
-      className="bg-gray-50 py-16 px-4"
-      aria-labelledby="appointment-form-title"
-    >
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-        {/* Contact Form */}
-        <div>
-          <h3
-            id="appointment-form-title"
-            className="text-3xl font-bold text-purple-800 mb-6"
-          >
-            Book an Appointment
-          </h3>
-          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
-            <div>
-              <label htmlFor="name" className="sr-only">
-                Full Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Full Name"
-                value={contact.name}
-                onChange={handleInputChange}
-                required
-                className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-            </div>
+    <div>
+      <h3
+        id="contact-title"
+        className="text-3xl font-bold text-purple-800 mb-6"
+      >
+        Book an Appointment
+      </h3>
+      <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+        <input
+          name="name"
+          type="text"
+          value={contact.name}
+          onChange={handleChange}
+          required
+          placeholder="Full Name"
+          className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+        />
+        <div className="flex flex-col md:flex-row gap-4">
+          <input
+            name="phone"
+            type="tel"
+            value={contact.phone}
+            onChange={handleChange}
+            required
+            placeholder="Phone Number"
+            className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+          />
+          <input
+            name="email"
+            type="email"
+            value={contact.email}
+            onChange={handleChange}
+            required
+            placeholder="Your Email"
+            className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+          />
+        </div>
+        <textarea
+          name="message"
+          rows="5"
+          value={contact.message}
+          onChange={handleChange}
+          required
+          placeholder="Your Message"
+          className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+        ></textarea>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          aria-label="Submit appointment request"
+          className="bg-purple-700 text-white font-semibold px-6 py-3 rounded hover:bg-purple-800 transition disabled:opacity-50"
+        >
+          {isSubmitting ? "Submitting..." : "Make an Appointment"}
+        </button>
+      </form>
+    </div>
+  );
+}
 
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="w-full">
-                <label htmlFor="phone" className="sr-only">
-                  Phone Number
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone Number"
-                  value={contact.phone}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
+function FAQAccordion() {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-              <div className="w-full">
-                <label htmlFor="email" className="sr-only">
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={contact.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-              </div>
-            </div>
+  return (
+    <div>
+      <h3 className="text-3xl font-bold text-purple-800 mb-6">
+        Have any Questions?
+      </h3>
+      <div className="space-y-4">
+        {faqs.map((faq, index) => {
+          const isOpen = activeIndex === index;
 
-            <div>
-              <label htmlFor="message" className="sr-only">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Your Message"
-                value={contact.message}
-                onChange={handleInputChange}
-                required
-                className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              aria-label="Make an appointment"
-              disabled={isSubmitting}
-              className="bg-purple-700 text-white cursor-pointer font-semibold px-6 py-3 rounded hover:bg-purple-800 transition disabled:opacity-50"
+          return (
+            <div
+              key={index}
+              className="border border-purple-200 rounded overflow-hidden"
             >
-              {isSubmitting ? "Submitting..." : "Make an Appointment"}
-            </button>
-          </form>
-        </div>
-
-        {/* FAQ Section */}
-        <div>
-          <h3 className="text-3xl font-bold text-purple-800 mb-6">
-            Have any Questions?
-          </h3>
-          <div className="space-y-4">
-            {faqs.map((faq, index) => {
-              const isActive = activeIndex === index;
-              return (
+              <button
+                aria-expanded={isOpen}
+                aria-controls={`faq-${index}`}
+                onClick={() => setActiveIndex(isOpen ? null : index)}
+                className="w-full flex justify-between items-center px-4 py-3 bg-purple-100 text-purple-900 font-medium"
+              >
+                <span>{faq.question}</span>
+                <Suspense fallback={<span>...</span>}>
+                  {isOpen ? <FaMinus /> : <FaPlus />}
+                </Suspense>
+              </button>
+              {isOpen && (
                 <div
-                  key={index}
-                  className="border border-purple-200 rounded overflow-hidden"
+                  id={`faq-${index}`}
+                  className="px-4 py-3 text-gray-700 bg-white border-t border-purple-200"
                 >
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    aria-expanded={isActive}
-                    aria-controls={`faq-${index}`}
-                    className="w-full flex justify-between items-center px-4 py-3 bg-purple-100 text-purple-900 font-medium focus:outline-none"
-                  >
-                    <span>{faq.question}</span>
-                    <span className="text-sm">
-                      {isActive ? <FaMinus /> : <FaPlus />}
-                    </span>
-                  </button>
-                  {isActive && (
-                    <div
-                      id={`faq-${index}`}
-                      className="px-4 py-3 text-gray-700 bg-white border-t border-purple-200"
-                    >
-                      {faq.answer}
-                    </div>
-                  )}
+                  {faq.answer}
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              )}
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }
 
