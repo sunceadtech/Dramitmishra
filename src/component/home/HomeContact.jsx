@@ -66,6 +66,7 @@ function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     const payload = {
       access_key: "d178f430-9dc9-4bf5-871b-b104717253a8",
       subject: "dramitsharmaortho.com - New Appointment",
@@ -81,16 +82,14 @@ function ContactForm() {
       });
 
       const result = await response.json();
-      console.log(result);
       if (result.success) {
         navigate("/thankyou");
         setContact({ name: "", phone: "", email: "", message: "" });
       } else {
-        alert("Something went wrong.");
+        alert("Submission failed. Please try again.");
       }
     } catch (error) {
-      console.error(error);
-      alert("Something went wrong!");
+      alert("Network error. Please try later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -105,7 +104,12 @@ function ContactForm() {
         Book an Appointment
       </h3>
       <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+        {/* Full Name */}
+        <label htmlFor="name" className="sr-only">
+          Full Name
+        </label>
         <input
+          id="name"
           name="name"
           type="text"
           value={contact.name}
@@ -114,27 +118,47 @@ function ContactForm() {
           placeholder="Full Name"
           className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
         />
+
+        {/* Phone and Email */}
         <div className="flex flex-col md:flex-row gap-4">
-          <input
-            name="phone"
-            type="tel"
-            value={contact.phone}
-            onChange={handleChange}
-            required
-            placeholder="Phone Number"
-            className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
-          />
-          <input
-            name="email"
-            type="email"
-            value={contact.email}
-            onChange={handleChange}
-            required
-            placeholder="Your Email"
-            className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
-          />
+          <div className="w-full">
+            <label htmlFor="phone" className="sr-only">
+              Phone Number
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              value={contact.phone}
+              onChange={handleChange}
+              required
+              placeholder="Phone Number"
+              className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+          <div className="w-full">
+            <label htmlFor="email" className="sr-only">
+              Email Address
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={contact.email}
+              onChange={handleChange}
+              required
+              placeholder="Your Email"
+              className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
         </div>
+
+        {/* Message */}
+        <label htmlFor="message" className="sr-only">
+          Message
+        </label>
         <textarea
+          id="message"
           name="message"
           rows="5"
           value={contact.message}
@@ -143,6 +167,8 @@ function ContactForm() {
           placeholder="Your Message"
           className="w-full border border-gray-300 rounded px-4 py-3 focus:ring-2 focus:ring-purple-500"
         ></textarea>
+
+        {/* Submit Button */}
         <button
           type="submit"
           disabled={isSubmitting}
@@ -167,7 +193,6 @@ function FAQAccordion() {
       <div className="space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = activeIndex === index;
-
           return (
             <div
               key={index}
@@ -177,21 +202,22 @@ function FAQAccordion() {
                 aria-expanded={isOpen}
                 aria-controls={`faq-${index}`}
                 onClick={() => setActiveIndex(isOpen ? null : index)}
-                className="w-full flex justify-between items-center px-4 py-3 bg-purple-100 text-purple-900 font-medium"
+                className="w-full flex justify-between items-center px-4 py-3 bg-purple-100 text-purple-900 font-medium focus:outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <span>{faq.question}</span>
                 <Suspense fallback={<span>...</span>}>
                   {isOpen ? <FaMinus /> : <FaPlus />}
                 </Suspense>
               </button>
-              {isOpen && (
-                <div
-                  id={`faq-${index}`}
-                  className="px-4 py-3 text-gray-700 bg-white border-t border-purple-200"
-                >
-                  {faq.answer}
-                </div>
-              )}
+              <div
+                id={`faq-${index}`}
+                aria-hidden={!isOpen}
+                className={`px-4 py-3 text-gray-700 bg-white border-t border-purple-200 transition-all duration-300 ${
+                  isOpen ? "block" : "hidden"
+                }`}
+              >
+                {faq.answer}
+              </div>
             </div>
           );
         })}

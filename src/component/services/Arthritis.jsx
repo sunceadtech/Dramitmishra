@@ -1,10 +1,29 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Arthritis() {
   return (
     <>
+      <Helmet>
+        <title>
+          Arthritis Treatment in Ghaziabad & Delhi | Dr. Amit Sharma
+        </title>
+        <meta
+          name="description"
+          content="Expert arthritis treatment and joint care by Dr. Amit Sharma in Ghaziabad and Delhi. Get relief from pain and improve mobility with advanced orthopedic care."
+        />
+        <meta
+          name="keywords"
+          content="Arthritis treatment, joint pain relief, osteoarthritis, rheumatoid arthritis, orthopedic surgeon Ghaziabad, Dr. Amit Sharma, arthritis care Delhi"
+        />
+        <link
+          rel="canonical"
+          href="https://dramitsharmaortho.com/service-detail/arthritis"
+        />
+      </Helmet>
+
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
           src="/images/service.webp"
@@ -21,13 +40,18 @@ function Arthritis() {
               Arthritis
             </h1>
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-1 sm:gap-2 text-sm text-white uppercase">
-              <Link to="/" className="hover:underline font-bold text-white/90">
+              <Link
+                to="/"
+                className="hover:underline font-bold text-white/90"
+                aria-label="Go to home page"
+              >
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" />
               <Link
                 to="/service"
                 className="hover:underline font-bold text-white/90"
+                aria-label="Go to services page"
               >
                 Services
               </Link>
@@ -164,7 +188,10 @@ function Arthritis() {
           </div>
 
           {/* Sidebar */}
-          <aside className="lg:w-1/4 w-full mt-10 lg:mt-0 space-y-6 mb-6">
+          <aside
+            className="lg:w-1/4 w-full mt-10 lg:mt-0 space-y-6 mb-6"
+            aria-label="Sidebar with services and OPD timings"
+          >
             {/* Services Box */}
             <div className="bg-purple-700 text-white p-4 min-h-[400px] md:min-h-[550px] rounded shadow-sm">
               <h4 className="text-lg font-semibold text-slate-100 mb-4 md:text-3xl text-center">
@@ -172,47 +199,74 @@ function Arthritis() {
               </h4>
               <ul className="text-sm md:text-md font-bold divide-y divide-purple-500 text-center">
                 <li className="py-3">
-                  <Link to="/service" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service"
+                    className="hover:underline inline-block w-full"
+                  >
                     Explore All Services
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/knee-replacement" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/knee-replacement"
+                    className="hover:underline inline-block w-full"
+                  >
                     Knee Replacement Surgery Details
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/hip-replacement" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/hip-replacement"
+                    className="hover:underline inline-block w-full"
+                  >
                     Hip Replacement Overview
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/arthroscopy" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/arthroscopy"
+                    className="hover:underline inline-block w-full"
+                  >
                     Arthroscopy Procedure Info
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/acl-and-pcl-reconstruction" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/acl-and-pcl-reconstruction"
+                    className="hover:underline inline-block w-full"
+                  >
                     ACL & PCL Reconstruction Guide
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/sports-injury" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/sports-injury"
+                    className="hover:underline inline-block w-full"
+                  >
                     Sports Injury Treatment
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/arthritis" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/arthritis"
+                    className="hover:underline inline-block w-full"
+                  >
                     Arthritis Care Options
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/osteoporosis" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/osteoporosis"
+                    className="hover:underline inline-block w-full"
+                  >
                     Osteoporosis Management
                   </Link>
                 </li>
                 <li className="py-3">
-                  <Link to="/service-detail/minimal-invasive-complex-trauma-surgery" className="hover:underline inline-block w-full">
+                  <Link
+                    to="/service-detail/minimal-invasive-complex-trauma-surgery"
+                    className="hover:underline inline-block w-full"
+                  >
                     Minimally Invasive Trauma Surgery
                   </Link>
                 </li>

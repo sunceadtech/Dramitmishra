@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function HomeMeet() {
   return (
@@ -11,7 +12,7 @@ function HomeMeet() {
         <figure className="w-full">
           <img
             src="/images/drsharma.webp"
-            alt="Dr. Amit Sharma - Orthopedic and Joint Replacement Surgeon"
+            alt="Dr. Amit Sharma, Top Orthopedic Surgeon in Delhi – Expert in Joint Replacement & Sports Injuries"
             width="600"
             height="400"
             className="rounded-lg shadow-md w-full h-auto object-cover"
@@ -20,7 +21,7 @@ function HomeMeet() {
             fetchpriority="high"
           />
           <figcaption className="sr-only">
-            Dr. Amit Sharma, orthopedic surgery and sports injury specialist
+            Dr. Amit Sharma – Orthopedic surgery and sports injury specialist
           </figcaption>
         </figure>
 
@@ -30,29 +31,33 @@ function HomeMeet() {
             id="meet-doctor-heading"
             className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4"
           >
-            Meet <span className="text-purple-700">Dr. Amit Sharma</span>
+            Meet{" "}
+            <span className="text-purple-700">
+              Dr. Amit Sharma – Orthopedic Surgeon in Delhi NCR
+            </span>
           </h2>
 
           <p className="text-gray-700 mb-4 leading-relaxed text-[15.5px]">
-            With over 23 years of surgical expertise, Dr. Amit Sharma is a
-            renowned orthopedic specialist focused on joint replacement,
-            arthroscopy, trauma surgery, and sports injuries. His passion for
-            endurance sports like marathons and triathlons enhances his patient
-            care philosophy.
+            With over 23 years of surgical experience, Dr. Amit Sharma is a
+            renowned orthopedic specialist in Delhi, known for his expertise in
+            joint replacement, arthroscopy, trauma surgery, and sports injuries.
+            His personal commitment to endurance sports like marathons and
+            triathlons deeply informs his patient-centric care.
           </p>
 
           <p className="text-gray-700 mb-6 text-[15.5px]">
-            His approach combines surgical precision with athlete-level empathy—helping
-            patients recover faster, move better, and live pain-free.
+            Dr. Sharma blends surgical precision with an athlete’s mindset,
+            empowering patients to recover faster, move confidently, and live a
+            pain-free life.
           </p>
 
-          <a
-            href="/about"
+          <Link
+            to="/about"
             className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-6 rounded transition duration-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-            aria-label="Learn more about Dr. Amit Sharma"
+            aria-label="Get To Know about Dr. Amit Sharma, orthopedic specialist in Delhi"
           >
-            Learn More About Dr. Sharma
-          </a>
+            Grt To Know About Dr. Sharma
+          </Link>
         </article>
       </div>
     </section>
@@ -60,4 +65,5 @@ function HomeMeet() {
 }
 
 export default HomeMeet;
+
 

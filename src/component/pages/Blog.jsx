@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
-
+import { Helmet } from "react-helmet";
 function Blog() {
   const blogs = [
     {
@@ -56,9 +56,22 @@ function Blog() {
 
   return (
     <>
+      <Helmet>
+        <title>Orthopedic Blog & Health Tips | Dr. Amit Sharma</title>
+        <meta
+          name="description"
+          content="Explore orthopedic care, joint replacement tips, recovery advice, and latest updates from Dr. Amit Sharma's orthopedic practice."
+        />
+        <meta
+          name="keywords"
+          content="orthopedic blog, joint pain tips, bone health, surgery recovery, Dr. Amit Sharma articles, health advice"
+        />
+        <link rel="canonical" href="https://dramitsharmaortho.com/blog" />
+      </Helmet>
+      {/* Hero Banner */}
       <div
         className="relative w-full h-[500px] md:h-[500px] overflow-hidden"
-        aria-label="Blog Banner"
+        aria-label="Blog Hero Section"
       >
         <img
           src="/images/blog.webp"
@@ -67,8 +80,10 @@ function Blog() {
           loading="eager"
           width="1920"
           height="500"
+          decoding="async"
+          fetchpriority="high"
         />
-        <div className="absolute inset-0 bg-black/30" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
         <div className="relative z-10 h-full flex items-center justify-start">
           <div className="max-w-3xl px-6 md:px-20">
             <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
@@ -81,12 +96,16 @@ function Blog() {
             <nav aria-label="Breadcrumb">
               <ol className="flex items-center gap-2 text-sm text-white">
                 <li>
-                  <Link to="/" className="hover:underline" aria-label="Go to homepage">
+                  <Link
+                    to="/"
+                    className="hover:underline"
+                    aria-label="Go to homepage"
+                  >
                     Home
                   </Link>
                 </li>
-                <li>
-                  <ChevronRight className="w-4 h-4" aria-hidden="true" />
+                <li aria-hidden="true">
+                  <ChevronRight className="w-4 h-4" />
                 </li>
                 <li aria-current="page">
                   <span className="font-semibold">Blogs</span>
@@ -97,11 +116,13 @@ function Blog() {
         </div>
       </div>
 
-      <section className="py-12 bg-gray-50" aria-label="Blog Articles">
+      {/* Blog Section */}
+      <section className="py-12 bg-gray-50" aria-label="Latest Blog Articles">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-semibold text-gray-800 mb-10">
-            Latest Articles
+            Latest Articles from Dr. Amit Sharma
           </h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {blogs.map((blog, index) => (
               <article
@@ -113,7 +134,7 @@ function Blog() {
                 <header className="relative">
                   <img
                     src={blog.image}
-                    alt={`Blog post: ${blog.title}`}
+                    alt={`Illustration for: ${blog.title}`}
                     className="w-full h-52 object-cover"
                     loading="lazy"
                     width="400"
@@ -128,27 +149,34 @@ function Blog() {
                     {blog.date}
                   </time>
                 </header>
+
                 <div className="p-4">
                   <h3
                     className="text-lg font-semibold text-slate-800 mb-2"
                     itemProp="headline"
                   >
-                    <Link to={blog.link} aria-label={`Read full article: ${blog.title}`}>
+                    <Link
+                      to={blog.link}
+                      aria-label={`Full article: ${blog.title}`}
+                      itemProp="url"
+                    >
                       {blog.title}
                     </Link>
                   </h3>
+
                   <p
                     className="text-sm text-gray-600 mb-3"
                     itemProp="description"
                   >
                     {blog.excerpt}
                   </p>
+
                   <Link
                     to={blog.link}
                     className="text-purple-600 hover:underline text-sm font-medium"
-                    aria-label={`Continue reading: ${blog.title}`}
+                    aria-label={`Explore more about: ${blog.title}`}
                   >
-                    Read more
+                    Explore more about "{blog.title}"
                   </Link>
                 </div>
               </article>

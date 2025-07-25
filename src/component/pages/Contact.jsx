@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Globe, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Clock, ChevronRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 function Contact() {
   const navigate = useNavigate();
@@ -12,6 +12,7 @@ function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (e) => {
     setFormData((prev) => ({
@@ -23,6 +24,8 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
+
     const payload = {
       access_key: "d178f430-9dc9-4bf5-871b-b104717253a8",
       subject: "dramitsharmaortho.com - New Appointment",
@@ -42,10 +45,10 @@ function Contact() {
         navigate("/thankyou");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        alert("Form submission failed. Please try again.");
+        setError("Form submission failed. Please try again.");
       }
-    } catch (error) {
-      alert("Something went wrong!");
+    } catch (err) {
+      setError("Something went wrong. Please try later.");
     } finally {
       setIsSubmitting(false);
     }
@@ -53,6 +56,21 @@ function Contact() {
 
   return (
     <>
+      {/* SEO Metadata */}
+      <Helmet>
+        <title>Contact Dr. Amit Sharma | Book Orthopedic Consultation</title>
+        <meta
+          name="description"
+          content="Book an appointment with Dr. Amit Sharma, orthopedic expert in Ghaziabad & Delhi. Call now or fill out the online form."
+        />
+        <meta
+          name="keywords"
+          content="orthopedic consultation, Dr. Amit Sharma, joint pain, Ghaziabad doctor, Delhi clinic"
+        />
+        <link rel="canonical" href="https://dramitsharmaortho.com/contact" />
+      </Helmet>
+
+      {/* Hero Section */}
       <section
         className="relative w-full h-[500px] overflow-hidden"
         aria-label="Contact banner"
@@ -72,18 +90,13 @@ function Contact() {
               Contact Us
             </h1>
             <p className="text-white text-lg md:text-xl mb-6">
-              Specializing in advanced orthopedic care, joint replacements, and
-              sports injuries. Trusted by thousands for compassionate healing.
+              Specializing in orthopedic care, joint replacements, and sports injuries.
             </p>
             <nav
               aria-label="breadcrumb"
               className="flex items-center gap-2 text-sm text-white"
             >
-              <Link
-                to="/"
-                className="hover:text-purple-600"
-                aria-label="Go to homepage"
-              >
+              <Link to="/" className="hover:text-purple-600" aria-label="Go to homepage">
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
@@ -95,57 +108,65 @@ function Contact() {
         </div>
       </section>
 
+      {/* Main Contact Section */}
       <main className="bg-white py-12 px-4 md:px-10 max-w-screen-xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-purple-700">Get in Touch</h2>
           <p className="text-gray-600 mt-2 text-lg">
-            Experiencing bone, joint, or sports-related issues? Book a
-            consultation with Dr. Amit Sharma.
+            Experiencing bone, joint, or sports-related issues? Book a consultation.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
+          {/* Form */}
           <section className="md:col-span-2" aria-labelledby="contact-form">
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-4"
-              aria-label="Contact form"
-            >
+            <form onSubmit={handleSubmit} role="form" className="space-y-4" aria-label="Contact form">
+              <label htmlFor="name" className="sr-only">Name</label>
               <input
-                type="text"
+                id="name"
                 name="name"
+                type="text"
                 placeholder="Name"
                 required
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 className="w-full h-14 px-4 text-black text-lg border border-gray-300 rounded-sm"
-                aria-label="Your Name"
               />
+
+              <label htmlFor="email" className="sr-only">Email</label>
               <input
-                type="email"
+                id="email"
                 name="email"
+                type="email"
                 placeholder="Email"
                 required
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 className="w-full h-14 px-4 text-black text-lg border border-gray-300 rounded-sm"
-                aria-label="Your Email"
               />
+
+              <label htmlFor="phone" className="sr-only">Phone</label>
               <input
-                type="tel"
+                id="phone"
                 name="phone"
+                type="tel"
                 placeholder="Phone"
                 pattern="[6789][0-9]{9}"
                 maxLength="10"
                 minLength="10"
-                title="Please enter a valid 10-digit phone number"
                 required
+                autoComplete="tel"
+                title="Please enter a valid 10-digit phone number"
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full h-14 px-4 text-black text-lg border border-gray-300 rounded-sm"
-                aria-label="Your Phone Number"
               />
+
+              <label htmlFor="message" className="sr-only">Message</label>
               <textarea
+                id="message"
                 name="message"
                 rows="5"
                 placeholder="Message"
@@ -153,13 +174,21 @@ function Contact() {
                 value={formData.message}
                 onChange={handleInputChange}
                 className="w-full px-4 py-2 text-black text-lg border border-gray-300 rounded-sm resize-none"
-                aria-label="Your Message"
               ></textarea>
+
+              {error && (
+                <div role="alert" className="text-red-600 font-medium">
+                  {error}
+                </div>
+              )}
+              <div role="status" aria-live="polite" className="sr-only">
+                {isSubmitting ? "Submitting your message..." : ""}
+              </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-purple-600 cursor-pointer text-white py-3 rounded hover:bg-purple-700 transition"
+                className="w-full bg-purple-600 text-white py-3 rounded hover:bg-purple-700 transition"
                 aria-label="Submit form"
               >
                 {isSubmitting ? "Submitting..." : "Submit Now"}
@@ -167,64 +196,36 @@ function Contact() {
             </form>
           </section>
 
-          <aside
-            className="bg-purple-500 text-white p-6 rounded-md"
-            aria-label="Contact Information"
-          >
+          {/* Contact Info */}
+          <aside className="bg-purple-500 text-white p-6 rounded-md" aria-label="Contact Information">
             <div className="flex items-start gap-4 mb-4">
               <MapPin className="text-black mt-1 w-6 h-6" aria-hidden="true" />
               <address>
-                Yashoda Super Speciality Hospital,
-                <br />
+                Yashoda Super Speciality Hospital,<br />
                 Kaushambi, Ghaziabad
               </address>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Phone className="text-black w-6 h-6" aria-hidden="true" />
-              <a
-                href="tel:+918750056560"
-                className="underline"
-                aria-label="Call +91-8750056560"
-              >
-                +91-8750056560
-              </a>
+              <a href="tel:+918750056560" className="underline">+91-8750056560</a>
             </div>
             <div className="flex items-start gap-4 mb-4">
               <MapPin className="text-black mt-1 w-6 h-6" aria-hidden="true" />
               <address>
-                City Clinic, Krishna Nagar (Opp. Swarn Cinema, near Surya
-                Hospital), Delhi
+                City Clinic, Krishna Nagar (Opp. Swarn Cinema), Delhi
               </address>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Phone className="text-black w-6 h-6" aria-hidden="true" />
-              <a
-                href="tel:+918826629486"
-                className="underline"
-                aria-label="Call +91-8826629486"
-              >
-                +91-8826629486
-              </a>
+              <a href="tel:+918826629486" className="underline">+91-8826629486</a>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Mail className="text-black w-6 h-6" aria-hidden="true" />
-              <a
-                href="mailto:amit9851@yahoo.com"
-                className="underline"
-                aria-label="Email amit9851@yahoo.com"
-              >
-                amit9851@yahoo.com
-              </a>
+              <a href="mailto:amit9851@yahoo.com" className="underline">amit9851@yahoo.com</a>
             </div>
             <div className="flex items-center gap-4 mb-4">
               <Globe className="text-black w-6 h-6" aria-hidden="true" />
-              <a
-                href="https://www.dramitsharma.info"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-                aria-label="Visit www.dramitsharma.info"
-              >
+              <a href="https://www.dramitsharma.info" target="_blank" rel="noopener noreferrer" className="underline">
                 www.dramitsharma.info
               </a>
             </div>
@@ -236,10 +237,8 @@ function Contact() {
         </div>
       </main>
 
-      <section
-        className="relative w-full h-[400px] md:h-[500px] rounded-md overflow-hidden"
-        aria-label="Google Map"
-      >
+      {/* Google Map */}
+      <section className="relative w-full h-[400px] md:h-[500px] rounded-md overflow-hidden" aria-label="Google Map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1756.250915521395!2d77.282176!3d28.646582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce39fd108ca75%3A0xc1c7d43a024ec41c!2sCity%20Clinic%2C%20Krishna%20Nagar!5e0!3m2!1sen!2sin!4v1721209584002!5m2!1sen!2sin"
           className="absolute top-0 left-0 w-full h-full border-0"
@@ -254,3 +253,4 @@ function Contact() {
 }
 
 export default Contact;
+

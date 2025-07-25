@@ -3,18 +3,32 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import HomeCrawsel from "../home/HomeCrawsel";
 import KneeComp from "../home/KneeComp";
-
+import { Helmet } from "react-helmet";
 function About() {
   return (
     <>
+      <Helmet>
+        <title>
+          About Dr. Amit Sharma | Orthopedic & Joint Replacement Surgeon
+        </title>
+        <meta
+          name="description"
+          content="Learn about Dr. Amit Sharma, a highly experienced orthopedic and joint replacement surgeon based in Ghaziabad and Delhi. Trusted for advanced bone and joint care."
+        />
+        <meta
+          name="keywords"
+          content="Dr. Amit Sharma, orthopedic surgeon, joint replacement specialist, bone doctor Delhi, and Ghaziabad orthopedic"
+        />
+        <link rel="canonical" href="https://dramitsharmaortho.com/about" />
+      </Helmet>
       {/* Hero Section */}
       <section
-        className="relative w-full h-[500px] md:h-[500px] overflow-hidden"
-        aria-label="Hero image of Dr. Amit Sharma"
+        className="relative w-full h-[500px] overflow-hidden"
+        aria-label="Introduction to Dr. Amit Sharma"
       >
         <img
           src="/images/main.webp"
-          alt="Dr. Amit Sharma hero background"
+          alt="Dr. Amit Sharma - Orthopedic Surgeon in Delhi NCR"
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
           width="1920"
@@ -27,37 +41,37 @@ function About() {
               Meet Dr. Amit Sharma
             </h1>
             <p className="text-white text-lg md:text-xl mb-6">
-              Specializing in advanced orthopedic care, joint replacements, and
-              sports injuries. Trusted by thousands for compassionate healing.
+              Your trusted orthopedic specialist for joint replacement, sports
+              injuries, and trauma care in Delhi NCR.
             </p>
             <nav
               className="flex items-center gap-2 text-sm text-white"
-              aria-label="Breadcrumb navigation for About page"
+              aria-label="Breadcrumb navigation"
             >
               <Link
                 to="/"
                 className="hover:underline"
-                aria-label="Go to Home page"
+                aria-label="Navigate to Home"
               >
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" aria-hidden="true" />
               <span className="font-semibold" aria-current="page">
-                About The Doctor
+                About Dr. Amit Sharma
               </span>
             </nav>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="bg-slate-50" aria-labelledby="about-doctor">
-        <div className="text-gray-700 px-4 md:px-14 py-10 space-y-12 max-w-7xl mx-auto">
+      {/* About Doctor Section */}
+      <section className="bg-slate-50" aria-labelledby="doctor-profile-heading">
+        <div className="text-gray-700 px-4 md:px-14 py-12 space-y-12 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-10">
             <div className="md:w-1/3">
               <img
                 src="/images/doctor2.webp"
-                alt="Portrait of Dr. Amit Sharma"
+                alt="Professional portrait of Dr. Amit Sharma"
                 className="w-full rounded shadow-md"
                 loading="lazy"
                 width="400"
@@ -66,120 +80,104 @@ function About() {
             </div>
             <div className="md:w-2/3 space-y-6">
               <h2
-                id="about-doctor"
+                id="doctor-profile-heading"
                 className="text-3xl font-bold text-purple-700"
               >
-                Dr. Amit Sharma
+                Dr. Amit Sharma - Orthopedic & Joint Replacement Surgeon
               </h2>
-              <p className="text-base leading-relaxed text-gray-600">
-                Dr. Amit Sharma is an{" "}
-                <strong>internationally trained orthopedic surgeon</strong> with
-                over 23 years of experience. He specializes in joint
-                replacement, arthroscopy, sports injuries, and minimally
-                invasive trauma surgeries.
-                <br />
-                <br />
-                His unique approach integrates cutting-edge surgical techniques
-                with a deep understanding of athlete recovery, thanks to his
-                background as a marathon and triathlon enthusiast.
-                <br />
-                <br />
-                He completed his senior residency at LNJP Hospital (MAMC) and
-                Sant Parmanand Hospital, followed by a tenure as{" "}
+              <p className="text-base leading-relaxed text-gray-700">
+                With <strong>23+ years of orthopedic experience</strong>, Dr.
+                Amit Sharma is a board-certified, internationally trained
+                orthopedic surgeon in Delhi NCR. His clinical expertise includes{" "}
                 <strong>
-                  Head of Orthopedics at Dr. Hedgewar Hospital
-                </strong>{" "}
-                for 8 years.
+                  knee and hip replacement, arthroscopy, sports injury treatment
+                </strong>
+                , and minimally invasive fracture surgery.
                 <br />
                 <br />
-                His professional training includes{" "}
-                <strong>global fellowships</strong> and certifications in
-                orthopedic advancements.
+                He has served as the Head of Orthopedics at Dr. Hedgewar
+                Hospital for over 8 years and completed senior residencies at
+                LNJP (MAMC) and Sant Parmanand Hospitals. He’s a triathlon and
+                marathon enthusiast, deeply understanding sports rehab and
+                performance.
                 <br />
                 <br />
-                <span className="font-semibold text-purple-600">
-                  His belief:
+                <span className="text-purple-700 font-semibold">
+                  Motto:
                 </span>{" "}
-                "Movement is medicine — restore it right."
+                “Movement is medicine — restore it right.”
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
                 <ul className="list-disc list-inside text-gray-700">
-                  <li>Joint Replacement</li>
-                  <li>Arthroscopy</li>
+                  <li>Joint Replacement (Knee & Hip)</li>
+                  <li>Advanced Arthroscopic Procedures</li>
                 </ul>
                 <ul className="list-disc list-inside text-gray-700">
-                  <li>Sports Injuries</li>
+                  <li>Sports Injury Rehabilitation</li>
                   <li>Minimally Invasive Trauma Surgery</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Training & Clinics */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-2 border-purple-400 p-4 rounded-md">
+          {/* Fellowship and Clinics */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {/* Fellowships */}
+            <div className="border-2 border-purple-400 p-5 rounded-md">
               <h3 className="font-semibold mb-3 text-purple-600 text-lg">
-                Global Fellowships & Training
+                International Fellowships & Certifications
               </h3>
-              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5">
+              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5 text-sm">
                 <li>
                   Arthroscopy & Sports Medicine – <strong>Sydney</strong>
                 </li>
                 <li>
-                  Trauma Surgery Techniques – <strong>Seoul</strong>
+                  Advanced Trauma Surgery – <strong>Seoul</strong>
                 </li>
                 <li>
-                  Exercise Medicine Certification –{" "}
-                  <strong>South Wales, UK</strong>
+                  Exercise Medicine – <strong>South Wales, UK</strong>
                 </li>
               </ul>
             </div>
-            <div className="border-2 border-blue-500 p-4 rounded-md">
+
+            {/* Yashoda Hospital */}
+            <div className="border-2 border-blue-500 p-5 rounded-md">
               <h3 className="font-semibold mb-3 text-blue-600 text-lg">
-                Yashoda Hospital – Kaushambi
+                Yashoda Super Speciality Hospital – Kaushambi
               </h3>
-              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5">
-                <li>Monday to Saturday</li>
+              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5 text-sm">
+                <li>Consultation Days: Monday to Saturday</li>
+                <li>Morning: 09:00 AM – 02:00 PM</li>
+                <li>Evening: 05:00 PM – 07:00 PM</li>
                 <li>
-                  <strong>09:00 AM – 02:00 PM</strong>
-                </li>
-                <li>
-                  <strong>05:00 PM – 07:00 PM</strong>
-                </li>
-                <li>
-                  Yashoda Super Speciality Hospital, Ghaziabad <br />
-                  <strong>
-                    Call @{" "}
-                    <a
-                      href="tel:+918750056560"
-                      aria-label="Call Yashoda Hospital"
-                    >
-                      8750056560
-                    </a>
-                  </strong>
+                  <strong>Call: </strong>
+                  <a
+                    href="tel:+918750056560"
+                    aria-label="Call Yashoda Hospital"
+                  >
+                    +91 87500 56560
+                  </a>
                 </li>
               </ul>
             </div>
-            <div className="border-2 border-purple-400 p-4 rounded-md">
+
+            {/* City Clinic */}
+            <div className="border-2 border-purple-400 p-5 rounded-md">
               <h3 className="font-semibold mb-3 text-purple-600 text-lg">
                 City Clinic – Krishna Nagar
               </h3>
-              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5">
-                <li>Monday to Saturday</li>
+              <ul className="space-y-2 list-image-[url('/images/arrow1.png')] pl-5 text-sm">
+                <li>Consultation: Monday to Saturday</li>
+                <li>Timings: 07:00 PM – 09:00 PM</li>
+                <li>Opp. Swarn Cinema, near Surya Hospital, Delhi</li>
                 <li>
-                  <strong>07:00 PM – 09:00 PM</strong>
+                  <strong>Call: </strong>
+                  <a href="tel:+918826629486" aria-label="Call City Clinic">
+                    +91 88266 29486
+                  </a>
                 </li>
                 <li>
-                  Opp. Swarn Cinema, near Surya Hospital, Delhi <br />
-                  <strong>
-                    Call @{" "}
-                    <a href="tel:+918826629486" aria-label="Call City Clinic">
-                      8826629486
-                    </a>
-                  </strong>
-                </li>
-                <li>
-                  Email:{" "}
+                  <strong>Email: </strong>
                   <a
                     href="mailto:amit9851@yahoo.com"
                     className="underline text-blue-600"
@@ -192,13 +190,14 @@ function About() {
             </div>
           </div>
 
-          <div className="text-center pt-2">
+          {/* CTA */}
+          <div className="text-center pt-8">
             <Link
               to="/service"
-              className="bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition"
-              aria-label="Explore all orthopedic services offered by Dr. Amit Sharma"
+              className="bg-purple-700 text-white px-6 py-3 rounded-md hover:bg-purple-800 transition"
+              aria-label="View all orthopedic treatments by Dr. Amit Sharma"
             >
-              View All Services
+              Explore All Services
             </Link>
           </div>
         </div>
@@ -208,18 +207,21 @@ function About() {
       <KneeComp />
 
       {/* Bottom CTA */}
-      <section className="bg-purple-600 py-2 md:py-6">
-        <div className="w-full text-white px-4 md:px-10 py-4 md:py-6 flex flex-col md:flex-row justify-around items-center gap-4 md:gap-0 max-w-7xl mx-auto">
+      <section
+        className="bg-purple-700 py-6 mt-12"
+        aria-label="Appointment Call to Action"
+      >
+        <div className="w-full text-white px-4 md:px-10 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
           <p className="text-center md:text-left text-sm md:text-lg font-medium">
-            Dealing with joint pain, fractures, or a sports injury? Get expert
-            orthopedic care from Dr. Amit Sharma.
+            Experiencing joint pain, fractures, or ligament issues? Trust Dr.
+            Amit Sharma for personalized, world-class orthopedic care.
           </p>
           <Link
             to="/contact"
-            className="bg-white text-purple-700 font-semibold px-5 py-2 rounded-full shadow hover:bg-purple-100 transition duration-200"
-            aria-label="Schedule an appointment with orthopedic surgeon Dr. Amit Sharma"
+            className="bg-white text-purple-700 font-semibold px-5 py-2 rounded-full hover:bg-purple-100 transition"
+            aria-label="Book an appointment with orthopedic expert Dr. Amit Sharma"
           >
-            Book Appointment
+            Book Consultation
           </Link>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -64,6 +65,20 @@ function Services() {
 
   return (
     <main>
+      <Helmet>
+        <title>Orthopedic Services | Dr. Amit Sharma</title>
+        <meta
+          name="description"
+          content="Explore comprehensive orthopedic services including joint replacements, sports injury care, arthroscopy, and more by Dr. Amit Sharma."
+        />
+        <meta
+          name="keywords"
+          content="Orthopedic services, joint replacement, ACL surgery, arthroscopy, trauma surgery, arthritis care, Dr. Amit Sharma"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://dramitsharmaortho.com/service" />
+      </Helmet>
+
       {/* Hero Section */}
       <header
         className="relative w-full h-[500px] overflow-hidden"
@@ -90,15 +105,21 @@ function Services() {
               <Link to="/" className="hover:underline font-semibold">
                 Home
               </Link>
-              <ChevronRight className="w-4 h-4" />
-              <span className="font-semibold">Our Expertise</span>
+              <ChevronRight className="w-4 h-4" aria-hidden="true" />
+              <span className="font-semibold" aria-current="page">
+                Our Expertise
+              </span>
             </nav>
           </div>
         </div>
       </header>
 
       {/* Services Section */}
-      <section className="py-16 bg-gray-50" aria-labelledby="services-heading">
+      <section
+        className="py-16 bg-gray-50"
+        aria-labelledby="services-heading"
+        role="region"
+      >
         <div className="max-w-7xl mx-auto px-4">
           <h2
             id="services-heading"
@@ -119,6 +140,8 @@ function Services() {
                 className="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 hover:shadow-xl group"
                 itemScope
                 itemType="https://schema.org/MedicalWebPage"
+                role="article"
+                aria-labelledby={`service-title-${index}`}
               >
                 <figure className="relative">
                   <img
@@ -133,6 +156,7 @@ function Services() {
                 </figure>
                 <div className="p-5">
                   <h3
+                    id={`service-title-${index}`}
                     className="text-xl font-bold text-purple-800 mb-2"
                     itemProp="name"
                   >
@@ -149,7 +173,7 @@ function Services() {
                   <Link
                     to={blog.link}
                     className="text-purple-700 hover:underline font-medium text-sm"
-                    aria-label={`Read more about ${blog.title}`}
+                    aria-label={`Learn more about ${blog.title} service`}
                   >
                     Read more about {blog.title}
                   </Link>

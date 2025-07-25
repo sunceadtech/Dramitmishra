@@ -1,11 +1,29 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
-function Osteoprosis() {
+function Osteoporosis() {
   return (
     <>
-      <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
+      <Helmet>
+        <title>Osteoporosis Treatment & Management | Dr. Amit Sharma</title>
+        <meta
+          name="description"
+          content="Understand and manage osteoporosis with expert care by Dr. Amit Sharma. Learn about causes, symptoms, diagnosis, and prevention of bone loss."
+        />
+        <meta
+          name="keywords"
+          content="osteoporosis treatment, bone health, weak bones, osteoporosis management, bone loss, fracture prevention, Dr. Amit Sharma, Ghaziabad, Delhi"
+        />
+        <link
+          rel="canonical"
+          href="https://dramitsharmaortho.com/service-detail/osteoporosis"
+        />
+      </Helmet>
+
+      {/* Hero Section */}
+      <div className="relative w-full h-[500px] overflow-hidden">
         <img
           src="/images/service.webp"
           alt="Osteoporosis operation"
@@ -14,7 +32,7 @@ function Osteoprosis() {
           height="500"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 h-full flex items-center justify-start">
           <div className="max-w-3xl px-4 md:px-32 text-center md:text-left">
             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
@@ -40,12 +58,12 @@ function Osteoprosis() {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* Main Content Section */}
       <div className="py-10 bg-white">
         <div className="max-w-7xl mx-auto lg:flex lg:gap-8 px-2 sm:px-4">
-          {/* Left Section */}
+          {/* Content Area */}
           <div className="lg:w-3/4 w-full">
-            <div className="rounded overflow-hidden shadow-md mb-0">
+            <div className="rounded overflow-hidden shadow-md">
               <img
                 src="/images/osteo.webp"
                 alt="Osteoporosis illustration"
@@ -103,37 +121,31 @@ function Osteoprosis() {
               <ul className="list-disc list-inside space-y-2">
                 <li>
                   <strong>Medications:</strong> Bisphosphonates, hormone-related
-                  therapy, and other medications that slow bone loss or
-                  stimulate bone formation.
+                  therapy, and others that slow bone loss or stimulate bone
+                  formation.
                 </li>
                 <li>
-                  <strong>Nutrition:</strong> A balanced diet rich in calcium
-                  and vitamin D is vital to maintain bone strength.
+                  <strong>Nutrition:</strong> Ensure a diet rich in calcium and
+                  vitamin D to support bone strength.
                 </li>
                 <li>
-                  <strong>Exercise:</strong> Weight-bearing and resistance
-                  exercises help maintain bone density and muscle strength.
+                  <strong>Exercise:</strong> Regular weight-bearing and
+                  resistance exercises maintain bone and muscle health.
                 </li>
                 <li>
-                  <strong>Lifestyle Changes:</strong> Quit smoking, limit
-                  alcohol, and take safety measures to prevent falls.
+                  <strong>Lifestyle:</strong> Avoid smoking, reduce alcohol, and
+                  ensure home safety to prevent falls.
                 </li>
               </ul>
 
               <h3 className="text-2xl font-semibold">Prevention Tips</h3>
               <ul className="list-disc list-inside space-y-2">
-                <li>Begin bone-healthy habits early in life.</li>
+                <li>Adopt bone-healthy habits from an early age.</li>
+                <li>Maintain daily calcium and vitamin D intake.</li>
                 <li>
-                  Ensure daily calcium and vitamin D intake through food or
-                  supplements.
+                  Engage in regular physical activities like walking or yoga.
                 </li>
-                <li>
-                  Engage in regular physical activity like walking, dancing, or
-                  lifting weights.
-                </li>
-                <li>
-                  Limit caffeine and salt, which can reduce calcium absorption.
-                </li>
+                <li>Limit salt and caffeine that hinder calcium absorption.</li>
               </ul>
 
               <hr className="my-6" />
@@ -153,7 +165,7 @@ function Osteoprosis() {
 
           {/* Sidebar */}
           <aside className="lg:w-1/4 w-full mt-10 lg:mt-0 space-y-6 mb-6">
-            {/* Services Box */}
+            {/* Services List */}
             <div className="bg-purple-700 text-white p-4 min-h-[400px] md:min-h-[550px] rounded shadow-sm">
               <h4 className="text-lg font-semibold text-slate-100 mb-4 md:text-3xl text-center">
                 Our Services
@@ -234,7 +246,7 @@ function Osteoprosis() {
               </ul>
             </div>
 
-            {/* OPD Timings Box */}
+            {/* OPD Timings */}
             <div className="bg-white text-gray-800 min-h-[350px] p-4 rounded shadow-sm border">
               <h6 className="text-lg font-semibold mb-3">OPD TIMINGS</h6>
               <ul className="text-sm space-y-2">
@@ -271,4 +283,4 @@ function Osteoprosis() {
   );
 }
 
-export default Osteoprosis;
+export default Osteoporosis;

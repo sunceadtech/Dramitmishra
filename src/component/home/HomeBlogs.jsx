@@ -9,7 +9,7 @@ const blogs = [
     image: "/images/blog1.webp",
     excerpt:
       "Knee pain shouldn't be ignored. Learn about common causes, early symptoms, and when it’s time to see an orthopedic specialist.",
-    link: "/blog/knee-pain-worsening",
+    link: "/service-detail/knee-replacement",
   },
   {
     title: "Top 5 Recovery Tips After Orthopedic Surgery",
@@ -17,7 +17,7 @@ const blogs = [
     image: "/images/blog2.webp",
     excerpt:
       "Recover faster and safer with these expert tips—covering physiotherapy, nutrition, rest, and follow-up care after joint surgery.",
-    link: "/blog/orthopedic-surgery-recovery",
+    link: "/service",
   },
   {
     title: "Preventing Sports Injuries: A Guide for Active Adults",
@@ -25,7 +25,7 @@ const blogs = [
     image: "/images/blog3.webp",
     excerpt:
       "Stay in the game longer! Discover how to protect your joints, strengthen muscles, and avoid common sports injuries at any age.",
-    link: "/blog/preventing-sports-injuries",
+    link: "/service-detail/sports-injury",
   },
 ];
 
@@ -80,10 +80,10 @@ function HomeBlogs() {
                   <p className="text-sm text-gray-600 mb-3">{blog.excerpt}</p>
                   <Link
                     to={blog.link}
-                    aria-label={`Continue reading: ${blog.title}`}
+                    aria-label={`Read full blog: ${blog.title}`}
                     className="text-purple-600 hover:underline text-sm font-medium"
                   >
-                    Read more
+                    {`Explore more ${blog.title}`}
                   </Link>
                 </div>
               </article>

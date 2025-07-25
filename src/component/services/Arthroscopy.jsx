@@ -1,10 +1,24 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Arthroscopy() {
   return (
     <>
+      <Helmet>
+        <title>Arthroscopy Surgery in Ghaziabad & Delhi | Dr. Amit Sharma</title>
+        <meta
+          name="description"
+          content="Get expert arthroscopy surgery in Ghaziabad and Delhi by Dr. Amit Sharma. Minimally invasive joint treatment with quick recovery."
+        />
+        <meta
+          name="keywords"
+          content="arthroscopy surgery, joint treatment, Dr. Amit Sharma, orthopedic surgeon Ghaziabad, minimally invasive surgery, Delhi knee specialist"
+        />
+        <link rel="canonical" href="https://dramitsharmaortho.com/service-detail/arthritis" />
+      </Helmet>
+
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
           src="/images/service.webp"
@@ -209,3 +223,4 @@ function Arthroscopy() {
 }
 
 export default Arthroscopy;
+

@@ -172,15 +172,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Dr. Amit Sharma. All rights
             reserved.
           </p>
-          <a
-            href="https://medipage.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${hoverLink} text-purple-300`}
-            aria-label="Visit Sunce Adtech website"
-          >
-            Website by Sunce Adtech
-          </a>
+          <p className="hover:underline text-gray-500 cursor-pointer">Website by Sunce Adtech</p>
         </div>
       </div>
     </footer>

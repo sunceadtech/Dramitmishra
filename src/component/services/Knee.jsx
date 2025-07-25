@@ -1,10 +1,26 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 function Knee() {
   return (
     <>
+      <Helmet>
+        <title>Knee Replacement Surgery | Dr. Amit Sharma</title>
+        <meta
+          name="description"
+          content="Knee replacement (arthroplasty) relieves chronic pain and restores mobility. Dr. Amit Sharma offers TKR & PKR procedures in Ghaziabad & Delhi."
+        />
+        <meta
+          name="keywords"
+          content="Knee replacement surgery, total knee replacement, partial knee replacement, orthopedic surgeon Ghaziabad, knee arthroplasty Delhi"
+        />
+        <link
+          rel="canonical"
+          href="https://dramitsharmaortho.com/service-detail/knee-replacement"
+        />
+      </Helmet>
+
       <div className="relative w-full h-[500px] md:h-[500px] overflow-hidden">
         <img
           src="/images/service.webp"
@@ -48,6 +64,8 @@ function Knee() {
                 alt="Knee Replacement Procedure Image"
                 width="1200"
                 height="675"
+                loading="lazy"
+                decoding="async"
                 className="w-full object-cover"
               />
             </div>

@@ -1,23 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { Helmet } from "react-helmet";
 import TestimonialCards from "./TestimonialCards";
-
-// SEO: Title & Canonical
-document.title = "Patient Testimonials - Dr. Amit Sharma | Orthopedic Surgeon";
-const canonical = document.querySelector("link[rel='canonical']");
-if (!canonical) {
-  const link = document.createElement("link");
-  link.setAttribute("rel", "canonical");
-  link.setAttribute("href", "https://www.dramitsharmaortho.com/testimonials");
-  document.head.appendChild(link);
-} else {
-  canonical.setAttribute("href", "https://www.dramitsharmaortho.com/testimonials");
-}
 
 function Testimonial() {
   return (
     <>
+      <Helmet>
+        <title>
+          Patient Testimonials | Dr. Amit Sharma - Orthopedic Surgeon
+        </title>
+        <meta
+          name="description"
+          content="Read real patient testimonials about their orthopedic treatment experience with Dr. Amit Sharma. Discover stories of recovery from joint pain, fractures, and surgeries."
+        />
+        <meta
+          name="keywords"
+          content="orthopedic testimonials, patient reviews, Dr. Amit Sharma, orthopedic surgeon feedback, success stories, joint treatment, bone care, recovery stories"
+        />
+        <link
+          rel="canonical"
+          href="https://www.dramitsharmaortho.com/testimonial"
+        />
+      </Helmet>
+
       {/* Hero Section */}
       <section
         className="relative w-full h-[500px] md:h-[600px] overflow-hidden"
@@ -40,7 +47,8 @@ function Testimonial() {
             </h1>
             <p className="text-lg md:text-xl mb-6 leading-relaxed">
               Hear what our patients say about their orthopedic care journey
-              with <strong>Dr. Amit Sharma</strong>. Real stories, real recoveries.
+              with <strong>Dr. Amit Sharma</strong>. Real stories, real
+              recoveries.
             </p>
 
             {/* Breadcrumb */}
@@ -56,10 +64,7 @@ function Testimonial() {
                 Home – Dr. Amit Sharma
               </Link>
               <ChevronRight className="w-4 h-4 text-white" />
-              <span
-                className="font-semibold text-white"
-                aria-current="page"
-              >
+              <span className="font-semibold text-white" aria-current="page">
                 Testimonials
               </span>
             </nav>
@@ -82,4 +87,3 @@ function Testimonial() {
 }
 
 export default Testimonial;
-
